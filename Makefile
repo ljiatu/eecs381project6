@@ -4,13 +4,13 @@ LD = g++
 CFLAGS = -c -g -pedantic -std=c++11 -Wall
 LFLAGS = -g
 
-OBJS = p5_main.o Model.o Views.o Controller.o
+OBJS = p6_main.o Model.o Views.o Controller.o
 OBJS += Sim_object.o Structure.o Moving_object.o Agent.o
 OBJS += Farm.o Town_Hall.o
 OBJS += Peasant.o Warriors.o
 OBJS += Agent_factory.o Structure_factory.o
 OBJS += Geometry.o Utility.o
-PROG = proj5exe
+PROG = proj6exe
 STRUCTURE = structure_test
 AGENT = agent_test
 
@@ -19,8 +19,8 @@ default: $(PROG)
 $(PROG): $(OBJS)
 	$(LD) $(LFLAGS) $(OBJS) -o $(PROG)
 
-p5_main.o: p5_main.cpp Model.h Controller.h
-	$(CC) $(CFLAGS) p5_main.cpp
+p6_main.o: p6_main.cpp Model.h Controller.h
+	$(CC) $(CFLAGS) p6_main.cpp
 
 Model.o: Model.cpp Model.h Views.h Sim_object.h Structure.h Agent.h Agent_factory.h Structure_factory.h Geometry.h Utility.h
 	$(CC) $(CFLAGS) Model.cpp
