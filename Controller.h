@@ -81,6 +81,8 @@ private:
     void work(std::shared_ptr<Agent> agent_ptr) const;
     // Tell the specified agent to attack another agent.
     void attack(std::shared_ptr<Agent> agent_ptr) const;
+    // Tell the specified agent to heal another agetn.
+    void heal(std::shared_ptr<Agent> agent_ptr) const;
     // Tell the specified agent to stop whatever s/he is doing.
     void stop(std::shared_ptr<Agent> agent_ptr) const;
 

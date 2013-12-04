@@ -115,6 +115,11 @@ void Agent::start_attacking(shared_ptr<Agent> target_ptr)
     throw Error(get_name() + ": Sorry, I can't attack!");
 }
 
+void Agent::start_healing (std::shared_ptr<Agent> target_ptr) 
+{
+    throw Error(get_name() + ": Sorry, I can't save!");
+}
+
 void Agent::lose_health(int attack_strength)
 {
     Model& model = Model::get_instance();
@@ -129,4 +134,17 @@ void Agent::lose_health(int attack_strength)
         model.notify_health(get_name(), health);
         cout << get_name() << ": Ouch!" << endl;
     }
+}
+
+void Agent::gain_health(int curing_strength) {
+    Model& model = Model::get_instance();
+    if (health == initial_health_c)
+        cout << get_name() << ": I'm perfectly fine!" << endl;
+    else {
+        health += curing_strength;
+        if (health > initial_health_c)
+            health = initial_health_c;
+        cout << get_name() << ": I'm feeling better!" << endl;
+    }
+    model.notify_health(get_name(), health);
 }

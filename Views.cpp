@@ -229,7 +229,8 @@ void Local_view::draw()
 {
     cout << "Local view for: " << name << endl;
     Point location;
-    if(get_object_location(location, name)) {
+    bool exists = get_object_location(location, name);
+    if(exists) {
         // re-compute the origin if the object is still there
         compute_origin(location);
     }
@@ -321,11 +322,6 @@ void Combat_view::update_remove(const string& name)
 
 void Combat_view::draw()
 {
-    Point location;
-    // If the object exists, re-compute the origin; otherwise, use the origin on file.
-    if(get_object_location(location, name)) {
-        compute_origin(location);
-    }
     vector<string> insiders = list_insiders(size, scale, origin);
     plot_selected("Combat view for: " + name, insiders);
 }

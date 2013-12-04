@@ -57,6 +57,7 @@ Controller::Controller()
     agent_commands["work"] = &Controller::work;
     agent_commands["attack"] = &Controller::attack;
     agent_commands["stop"] = &Controller::stop;
+    agent_commands["heal"] = &Controller::heal;
 }
 
 void Controller::run()
@@ -306,6 +307,14 @@ void Controller::work(shared_ptr<Agent> agent_ptr) const
     shared_ptr<Structure> source_ptr = model.get_structure_ptr(source_name);
     shared_ptr<Structure> destination_ptr = model.get_structure_ptr(destination_name);
     agent_ptr -> start_working(source_ptr, destination_ptr);
+}
+
+void Controller::heal(shared_ptr<Agent> agent_ptr) const 
+{
+    string target_name;
+    cin >> target_name;
+    shared_ptr<Agent> target_ptr = Model::get_instance().get_agent_ptr(target_name);
+    agent_ptr -> start_healing(agent_ptr);
 }
 
 void Controller::attack(shared_ptr<Agent> agent_ptr) const

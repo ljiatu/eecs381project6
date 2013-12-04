@@ -143,12 +143,14 @@ shared_ptr<Agent> Model::get_closest_agent_ptr(shared_ptr<Agent> agent_ptr, doub
 {
     // First find out all agents who are within the attacking range of the specified agent,
     // excluding the specified agent her/himself. All agents will be sorted by name.
-    vector<Agents_t::value_type> reachable_agents;
-    copy_if(agents.begin(), agents.end(), back_inserter(reachable_agents),
-        [agent_ptr, range](Agents_t::value_type agent)
-            {return cartesian_distance((agent.second) -> get_location(), agent_ptr -> get_location()) <= range
-                && agent.second != agent_ptr;});
+    // vector<Agents_t::value_type> reachable_agents;
+    // copy_if(agents.begin(), agents.end(), back_inserter(reachable_agents),
+    //     [agent_ptr, range](Agents_t::value_type agent)
+    //         {return cartesian_distance((agent.second) -> get_location(), agent_ptr -> get_location()) <= range
+    //             && agent.second != agent_ptr;});
     // If no body is within range, return a null shared_ptr.
+
+    vector<Agents_t::value_type> reachable_agents = get_agents_in_range(agent_ptr, range);
     if(reachable_agents.empty()) {
         return shared_ptr<Agent>();
     }
@@ -173,6 +175,16 @@ shared_ptr<Agent> Model::get_closest_agent_ptr(shared_ptr<Agent> agent_ptr, doub
     Agent_dist_comp comparator(agent_ptr);
     auto it = min_element(reachable_agents.begin(), reachable_agents.end(), comparator);
     return it -> second;
+}
+
+vector<std::map<std::string, std::shared_ptr<Agent>>::value_type> Model::get_agents_in_range (std::shared_ptr<Agent> agent_ptr, double range) const
+{
+    vector<std::map<std::string, std::shared_ptr<Agent>>::value_type> reachable_agents;
+    copy_if(agents.begin(), agents.end(), back_inserter(reachable_agents),
+        [agent_ptr, range](Agents_t::value_type agent)
+            {return cartesian_distance((agent.second) -> get_location(), agent_ptr -> get_location()) <= range
+                && agent.second != agent_ptr;});
+    return reachable_agents;
 }
 
 void Model::remove_agent(shared_ptr<Agent> dead_agent)

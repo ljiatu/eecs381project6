@@ -30,6 +30,8 @@ public:
     // return true if this Agent is in motion
     bool is_moving() const;
     
+    void gain_health(int curing_strength);
+
     // tell this Agent to start moving to location destination_
     virtual void move_to(Point destination_);
 
@@ -59,11 +61,14 @@ public:
     // Throws exception that an Agent cannot attack.
     virtual void start_attacking(std::shared_ptr<Agent> target_ptr);
 
+    // Throws exception that an Agent cannot heal. 
+    virtual void start_healing (std::shared_ptr<Agent> target_ptr);
+
+
 protected:
     // calculate loss of health due to hit.
     // if health decreases to zero or negative, Agent state becomes Dying, and any movement is stopped.
     void lose_health(int attack_strength);
-
 private:
     enum State_e {ALIVE, DEAD};
     int health;
