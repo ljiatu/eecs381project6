@@ -9,8 +9,6 @@ public:
 	Witch_doctor (const std::string& name, Point location_);
 	// Implements Doctor's behavior.
 	void update() override;
-	// Overrides Warrior's stop behavior.
-	void stop() override;
 	// Output information about current state.
 	void describe() const override;
 	// Override Warrior's attack function, Doctor can't voluntarily attack.
@@ -27,8 +25,7 @@ public:
 private:
 	int curing_strength;
 	std::weak_ptr<Agent> target;
-	enum State_e {ATTACKING, HEALING, NOT_HEALING};
-	State_e state;
+	bool healing;
 };
 
 #endif
