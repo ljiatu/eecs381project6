@@ -71,8 +71,10 @@ protected:
     void lose_health(int attack_strength);
 private:
     enum State_e {ALIVE, DEAD};
+	enum Attack_State_e {ATTACKING, NOT_ATTACKING};
     int health;
     State_e state;
+	Attack_State_e attack_state;
 };
 
 #endif

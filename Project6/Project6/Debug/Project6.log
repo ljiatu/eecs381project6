@@ -1,0 +1,431 @@
+﻿Build started 12/4/2013 7:58:35 PM.
+     1>Project "H:\381\p6\eecs381project6\Project6\Project6\Project6.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:strict /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\Agent.cpp ..\..\Agent_factory.cpp ..\..\Controller.cpp ..\..\Doctor.cpp ..\..\Farm.cpp ..\..\Geometry.cpp ..\..\Model.cpp ..\..\Moving_object.cpp ..\..\p6_main.cpp ..\..\Peasant.cpp ..\..\Sim_object.cpp ..\..\Structure.cpp ..\..\Structure_factory.cpp ..\..\Town_Hall.cpp ..\..\Utility.cpp ..\..\Views.cpp ..\..\Warriors.cpp
+         Warriors.cpp
+     1>h:\381\p6\eecs381project6\model.h(100): error C2873: 'Structures_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(100): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(100): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(101): error C2873: 'Agents_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(101): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(101): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(107): error C2146: syntax error : missing ';' before identifier 'structures'
+     1>h:\381\p6\eecs381project6\model.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(108): error C2146: syntax error : missing ';' before identifier 'agents'
+     1>h:\381\p6\eecs381project6\model.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(118): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(118): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2238: unexpected token(s) preceding ';'
+         Views.cpp
+     1>h:\381\p6\eecs381project6\views.h(201): warning C4250: 'Combat_view' : inherits 'Visual_view::Visual_view::update_location' via dominance
+                 h:\381\p6\eecs381project6\views.h(50) : see declaration of 'Visual_view::update_location'
+     1>h:\381\p6\eecs381project6\views.cpp(84): warning C4244: 'initializing' : conversion from 'std::streamsize' to 'int', possible loss of data
+         Utility.cpp
+         Town_Hall.cpp
+     1>h:\381\p6\eecs381project6\model.h(100): error C2873: 'Structures_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(100): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(100): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(101): error C2873: 'Agents_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(101): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(101): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(107): error C2146: syntax error : missing ';' before identifier 'structures'
+     1>h:\381\p6\eecs381project6\model.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(108): error C2146: syntax error : missing ';' before identifier 'agents'
+     1>h:\381\p6\eecs381project6\model.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(118): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(118): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2238: unexpected token(s) preceding ';'
+         Structure_factory.cpp
+         Structure.cpp
+     1>h:\381\p6\eecs381project6\model.h(100): error C2873: 'Structures_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(100): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(100): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(101): error C2873: 'Agents_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(101): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(101): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(107): error C2146: syntax error : missing ';' before identifier 'structures'
+     1>h:\381\p6\eecs381project6\model.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(108): error C2146: syntax error : missing ';' before identifier 'agents'
+     1>h:\381\p6\eecs381project6\model.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(118): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(118): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2238: unexpected token(s) preceding ';'
+         Sim_object.cpp
+         Peasant.cpp
+     1>h:\381\p6\eecs381project6\model.h(100): error C2873: 'Structures_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(100): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(100): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(101): error C2873: 'Agents_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(101): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(101): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(107): error C2146: syntax error : missing ';' before identifier 'structures'
+     1>h:\381\p6\eecs381project6\model.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(108): error C2146: syntax error : missing ';' before identifier 'agents'
+     1>h:\381\p6\eecs381project6\model.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(118): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(118): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2238: unexpected token(s) preceding ';'
+         p6_main.cpp
+     1>h:\381\p6\eecs381project6\controller.h(32): error C2873: 'View_command_func_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\controller.h(32): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\controller.h(32): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\controller.h(33): error C2873: 'Program_command_func_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\controller.h(33): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\controller.h(33): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\controller.h(34): error C2873: 'Agent_command_func_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\controller.h(34): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\controller.h(34): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\controller.h(37): error C2065: 'View_command_func_t' : undeclared identifier
+     1>h:\381\p6\eecs381project6\controller.h(37): error C2923: 'std::map' : 'View_command_func_t' is not a valid template type argument for parameter '_Ty'
+     1>h:\381\p6\eecs381project6\controller.h(38): error C2065: 'Program_command_func_t' : undeclared identifier
+     1>h:\381\p6\eecs381project6\controller.h(38): error C2923: 'std::map' : 'Program_command_func_t' is not a valid template type argument for parameter '_Ty'
+     1>h:\381\p6\eecs381project6\controller.h(39): error C2065: 'Agent_command_func_t' : undeclared identifier
+     1>h:\381\p6\eecs381project6\controller.h(39): error C2923: 'std::map' : 'Agent_command_func_t' is not a valid template type argument for parameter '_Ty'
+         Moving_object.cpp
+         Model.cpp
+     1>h:\381\p6\eecs381project6\model.h(100): error C2873: 'Structures_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(100): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(100): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(101): error C2873: 'Agents_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(101): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(101): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(107): error C2146: syntax error : missing ';' before identifier 'structures'
+     1>h:\381\p6\eecs381project6\model.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(108): error C2146: syntax error : missing ';' before identifier 'agents'
+     1>h:\381\p6\eecs381project6\model.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(118): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(118): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\views.h(201): warning C4250: 'Combat_view' : inherits 'Visual_view::Visual_view::update_location' via dominance
+                 h:\381\p6\eecs381project6\views.h(50) : see declaration of 'Visual_view::update_location'
+     1>h:\381\p6\eecs381project6\model.cpp(56): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(56): error C2228: left of '.find' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(57): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(57): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(57): error C2228: left of '.end' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(63): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(63): error C2227: left of '->second' must point to class/struct/union/generic type
+                 type is 'int'
+     1>h:\381\p6\eecs381project6\model.cpp(63): error C2227: left of '->get_name' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(71): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(77): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(77): error C2228: left of '.find' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(78): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(78): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(78): error C2228: left of '.end' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(81): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(81): error C2227: left of '->second' must point to class/struct/union/generic type
+                 type is 'int'
+     1>h:\381\p6\eecs381project6\model.cpp(81): error C2227: left of '->get_name' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(82): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(82): error C2227: left of '->second' must point to class/struct/union/generic type
+                 type is 'int'
+     1>h:\381\p6\eecs381project6\model.cpp(96): error C2653: 'Structures_t' : is not a class or namespace name
+     1>h:\381\p6\eecs381project6\model.cpp(96): error C2061: syntax error : identifier 'value_type'
+     1>h:\381\p6\eecs381project6\model.cpp(107): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(107): error C2228: left of '.begin' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(107): error C2228: left of '.end' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(107): error C2780: '_FwdIt std::min_element(_FwdIt,_FwdIt)' : expects 2 arguments - 3 provided
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\algorithm(5186) : see declaration of 'std::min_element'
+     1>h:\381\p6\eecs381project6\model.cpp(107): error C2227: left of '->second' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(98): error C2065: 'structure1' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(98): error C2228: left of '.second' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(98): error C2227: left of '->get_location' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(99): error C2065: 'structure2' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(99): error C2228: left of '.second' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(99): error C2227: left of '->get_location' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(112): error C2065: 'agents' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(112): error C2228: left of '.find' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(113): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(113): error C2065: 'agents' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(113): error C2228: left of '.end' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(117): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(117): error C2227: left of '->second' must point to class/struct/union/generic type
+                 type is 'int'
+     1>h:\381\p6\eecs381project6\model.cpp(117): error C2227: left of '->get_name' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(125): error C2065: 'agents' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(131): error C2065: 'agents' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(131): error C2228: left of '.find' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(132): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(132): error C2065: 'agents' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(132): error C2228: left of '.end' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(135): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(135): error C2227: left of '->second' must point to class/struct/union/generic type
+                 type is 'int'
+     1>h:\381\p6\eecs381project6\model.cpp(135): error C2227: left of '->get_name' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(136): error C3536: 'it': cannot be used before it is initialized
+     1>h:\381\p6\eecs381project6\model.cpp(136): error C2227: left of '->second' must point to class/struct/union/generic type
+                 type is 'int'
+     1>h:\381\p6\eecs381project6\model.cpp(153): error C2653: 'Agents_t' : is not a class or namespace name
+     1>h:\381\p6\eecs381project6\model.cpp(153): error C2065: 'value_type' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(153): error C2923: 'std::vector' : 'value_type' is not a valid template type argument for parameter '_Ty'
+     1>h:\381\p6\eecs381project6\model.cpp(153): error C2440: 'initializing' : cannot convert from 'std::vector<_Ty>' to 'std::vector<_Ty>'
+                 with
+                 [
+                     _Ty=std::pair<const std::string,std::shared_ptr<Agent>>
+                 ]
+                 and
+                 [
+                     _Ty=int
+                 ]
+                 No constructor could take the source type, or constructor overload resolution was ambiguous
+     1>h:\381\p6\eecs381project6\model.cpp(164): error C2653: 'Agents_t' : is not a class or namespace name
+     1>h:\381\p6\eecs381project6\model.cpp(164): error C2061: syntax error : identifier 'value_type'
+     1>h:\381\p6\eecs381project6\model.cpp(177): error C2839: invalid return type 'int *' for overloaded 'operator ->'
+     1>h:\381\p6\eecs381project6\model.cpp(177): error C2039: 'second' : is not a member of 'std::_Vector_iterator<_Myvec>'
+                 with
+                 [
+                     _Myvec=std::_Vector_val<std::_Simple_types<int>>
+                 ]
+     1>h:\381\p6\eecs381project6\model.cpp(166): error C2065: 'agent1' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(166): error C2228: left of '.second' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(166): error C2227: left of '->get_location' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(167): error C2065: 'agent2' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(167): error C2228: left of '.second' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(167): error C2227: left of '->get_location' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(183): error C2065: 'agents' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(183): error C2228: left of '.begin' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(183): error C2228: left of '.end' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(184): error C2653: 'Agents_t' : is not a class or namespace name
+     1>h:\381\p6\eecs381project6\model.cpp(184): error C2061: syntax error : identifier 'value_type'
+     1>h:\381\p6\eecs381project6\model.cpp(185): error C2065: 'agent' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(185): error C2228: left of '.second' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(185): error C2227: left of '->get_location' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\model.cpp(186): error C2065: 'agent' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(186): error C2228: left of '.second' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(193): error C2065: 'agents' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(193): error C2228: left of '.find' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(193): error C2228: left of '.end' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(195): error C2065: 'agents' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(195): error C2228: left of '.erase' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\model.cpp(261): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(264): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(267): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(270): error C2065: 'structures' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(275): error C2065: 'agents' : undeclared identifier
+     1>h:\381\p6\eecs381project6\model.cpp(275): fatal error C1003: error count exceeds 100; stopping compilation
+         Geometry.cpp
+         Farm.cpp
+     1>h:\381\p6\eecs381project6\model.h(100): error C2873: 'Structures_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(100): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(100): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(101): error C2873: 'Agents_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(101): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(101): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(107): error C2146: syntax error : missing ';' before identifier 'structures'
+     1>h:\381\p6\eecs381project6\model.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(108): error C2146: syntax error : missing ';' before identifier 'agents'
+     1>h:\381\p6\eecs381project6\model.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(118): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(118): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2238: unexpected token(s) preceding ';'
+         Doctor.cpp
+     1>h:\381\p6\eecs381project6\model.h(100): error C2873: 'Structures_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(100): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(100): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(101): error C2873: 'Agents_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(101): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(101): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(107): error C2146: syntax error : missing ';' before identifier 'structures'
+     1>h:\381\p6\eecs381project6\model.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(108): error C2146: syntax error : missing ';' before identifier 'agents'
+     1>h:\381\p6\eecs381project6\model.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(118): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(118): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\doctor.cpp(28): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\doctor.cpp(28): error C2873: 'Agent_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\doctor.cpp(29): error C2653: 'Agent_t' : is not a class or namespace name
+     1>h:\381\p6\eecs381project6\doctor.cpp(29): error C2065: 'value_type' : undeclared identifier
+     1>h:\381\p6\eecs381project6\doctor.cpp(29): error C2923: 'std::vector' : 'value_type' is not a valid template type argument for parameter '_Ty'
+     1>h:\381\p6\eecs381project6\doctor.cpp(29): error C2440: 'initializing' : cannot convert from 'std::vector<_Ty>' to 'std::vector<_Ty>'
+                 with
+                 [
+                     _Ty=std::pair<const std::string,std::shared_ptr<Agent>>
+                 ]
+                 and
+                 [
+                     _Ty=int
+                 ]
+                 No constructor could take the source type, or constructor overload resolution was ambiguous
+     1>h:\381\p6\eecs381project6\doctor.cpp(31): error C2653: 'Agent_t' : is not a class or namespace name
+     1>h:\381\p6\eecs381project6\doctor.cpp(31): error C2061: syntax error : identifier 'value_type'
+     1>h:\381\p6\eecs381project6\doctor.cpp(32): error C2065: 'agent_pair' : undeclared identifier
+     1>h:\381\p6\eecs381project6\doctor.cpp(32): error C2228: left of '.second' must have class/struct/union
+                 type is ''unknown-type''
+     1>h:\381\p6\eecs381project6\doctor.cpp(32): error C2227: left of '->gain_health' must point to class/struct/union/generic type
+     1>h:\381\p6\eecs381project6\doctor.cpp(38): error C2509: 'stop' : member function not declared in 'Doctor'
+                 h:\381\p6\eecs381project6\doctor.h(7) : see declaration of 'Doctor'
+         Controller.cpp
+     1>h:\381\p6\eecs381project6\controller.h(32): error C2873: 'View_command_func_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\controller.h(32): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\controller.h(32): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\controller.h(33): error C2873: 'Program_command_func_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\controller.h(33): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\controller.h(33): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\controller.h(34): error C2873: 'Agent_command_func_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\controller.h(34): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\controller.h(34): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\controller.h(37): error C2065: 'View_command_func_t' : undeclared identifier
+     1>h:\381\p6\eecs381project6\controller.h(37): error C2923: 'std::map' : 'View_command_func_t' is not a valid template type argument for parameter '_Ty'
+     1>h:\381\p6\eecs381project6\controller.h(38): error C2065: 'Program_command_func_t' : undeclared identifier
+     1>h:\381\p6\eecs381project6\controller.h(38): error C2923: 'std::map' : 'Program_command_func_t' is not a valid template type argument for parameter '_Ty'
+     1>h:\381\p6\eecs381project6\controller.h(39): error C2065: 'Agent_command_func_t' : undeclared identifier
+     1>h:\381\p6\eecs381project6\controller.h(39): error C2923: 'std::map' : 'Agent_command_func_t' is not a valid template type argument for parameter '_Ty'
+     1>h:\381\p6\eecs381project6\model.h(100): error C2873: 'Structures_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(100): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(100): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(101): error C2873: 'Agents_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(101): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(101): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(107): error C2146: syntax error : missing ';' before identifier 'structures'
+     1>h:\381\p6\eecs381project6\model.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(108): error C2146: syntax error : missing ';' before identifier 'agents'
+     1>h:\381\p6\eecs381project6\model.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(118): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(118): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\views.h(201): warning C4250: 'Combat_view' : inherits 'Visual_view::Visual_view::update_location' via dominance
+                 h:\381\p6\eecs381project6\views.h(50) : see declaration of 'Visual_view::update_location'
+     1>h:\381\p6\eecs381project6\controller.cpp(43): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void) const' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(44): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void) const' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(45): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void) const' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(46): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void) const' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(48): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void)' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(49): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void)' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(50): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void)' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(51): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void)' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(52): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void)' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(53): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void)' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(54): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(void)' to 'int'
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(56): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(std::shared_ptr<_Ty>) const' to 'int'
+                 with
+                 [
+                     _Ty=Agent
+                 ]
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(57): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(std::shared_ptr<_Ty>) const' to 'int'
+                 with
+                 [
+                     _Ty=Agent
+                 ]
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(58): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(std::shared_ptr<_Ty>) const' to 'int'
+                 with
+                 [
+                     _Ty=Agent
+                 ]
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(59): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(std::shared_ptr<_Ty>) const' to 'int'
+                 with
+                 [
+                     _Ty=Agent
+                 ]
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(60): error C2440: '=' : cannot convert from 'void (__thiscall Controller::* )(std::shared_ptr<_Ty>) const' to 'int'
+                 with
+                 [
+                     _Ty=Agent
+                 ]
+                 There is no context in which this conversion is possible
+     1>h:\381\p6\eecs381project6\controller.cpp(89): error C2297: '->*' : illegal, right operand has type 'int'
+     1>h:\381\p6\eecs381project6\controller.cpp(100): error C2297: '->*' : illegal, right operand has type 'int'
+     1>h:\381\p6\eecs381project6\controller.cpp(110): error C2297: '->*' : illegal, right operand has type 'int'
+         Agent_factory.cpp
+         Agent.cpp
+     1>h:\381\p6\eecs381project6\model.h(100): error C2873: 'Structures_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(100): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(100): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(101): error C2873: 'Agents_t' : symbol cannot be used in a using-declaration
+     1>h:\381\p6\eecs381project6\model.h(101): error C2143: syntax error : missing ';' before '='
+     1>h:\381\p6\eecs381project6\model.h(101): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(107): error C2146: syntax error : missing ';' before identifier 'structures'
+     1>h:\381\p6\eecs381project6\model.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(108): error C2146: syntax error : missing ';' before identifier 'agents'
+     1>h:\381\p6\eecs381project6\model.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>h:\381\p6\eecs381project6\model.h(118): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(118): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(119): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(120): error C2238: unexpected token(s) preceding ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2059: syntax error : ';'
+     1>h:\381\p6\eecs381project6\model.h(121): error C2238: unexpected token(s) preceding ';'
+         Generating Code...
+     1>Done Building Project "H:\381\p6\eecs381project6\Project6\Project6\Project6.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:08.80

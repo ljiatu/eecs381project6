@@ -314,7 +314,7 @@ void Controller::heal(shared_ptr<Agent> agent_ptr) const
     string target_name;
     cin >> target_name;
     shared_ptr<Agent> target_ptr = Model::get_instance().get_agent_ptr(target_name);
-    agent_ptr -> start_healing(agent_ptr);
+    agent_ptr -> start_healing(target_ptr);
 }
 
 void Controller::attack(shared_ptr<Agent> agent_ptr) const

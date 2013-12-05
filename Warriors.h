@@ -33,10 +33,11 @@ public:
     // output information about the current state
     void describe() const override;
 
-protected:
-    // getters for attacking state and range value
     bool is_attacking() const
     {return attacking;}
+
+protected:
+    // getters for attacking state and range value
     double get_range() const
     {return range;}
 

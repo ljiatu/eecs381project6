@@ -285,6 +285,10 @@ Model::Model() : time(0)
     agent_ptr = create_agent("Iriel", "Archer", Point(20., 38.));
     sim_objects[get_initial_letters(agent_ptr)] = agent_ptr;
     agents[get_initial_letters(agent_ptr)] = agent_ptr;
+	// Creating new Witch_doctor:
+	agent_ptr = create_agent("Zola", "Witch_doctor", Point(12., 12.));
+    sim_objects[get_initial_letters(agent_ptr)] = agent_ptr;
+    agents[get_initial_letters(agent_ptr)] = agent_ptr;
 }
 
 // Return the first num_letters_c letters of the name of the object

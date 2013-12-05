@@ -9,7 +9,7 @@ OBJS += Sim_object.o Structure.o Moving_object.o Agent.o
 OBJS += Farm.o Town_Hall.o
 OBJS += Peasant.o Warriors.o
 OBJS += Agent_factory.o Structure_factory.o
-OBJS += Geometry.o Utility.o
+OBJS += Geometry.o Utility.o Witch_doctor.o
 PROG = proj6exe
 STRUCTURE = structure_test
 AGENT = agent_test
@@ -66,6 +66,9 @@ Geometry.o: Geometry.cpp Geometry.h
 
 Utility.o: Utility.cpp Utility.h
 	$(CC) $(CFLAGS) Utility.cpp
+
+Witch_doctor.o: Witch_doctor.cpp Witch_doctor.h
+	$(CC) $(CFLAGS) Witch_doctor.cpp
 
 Structure_test.o: Structure_test.cpp Geometry.h
 	$(CC) $(CFLAGS) Structure_test.cpp
