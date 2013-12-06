@@ -29,7 +29,17 @@ public:
 
     // return true if this Agent is in motion
     bool is_moving() const;
+
+    // return true if this Agent is attacking
+    // Default behavior is false.
+    virtual bool is_attacking() const
+    {return false;}
     
+    // return the health of the agent
+    int get_health() const
+    {return health;}
+    
+    // Increase the health of the agent by the curing strength, max health is 5/
     void gain_health(int curing_strength);
 
     // tell this Agent to start moving to location destination_
@@ -71,10 +81,8 @@ protected:
     void lose_health(int attack_strength);
 private:
     enum State_e {ALIVE, DEAD};
-	enum Attack_State_e {ATTACKING, NOT_ATTACKING};
     int health;
     State_e state;
-	Attack_State_e attack_state;
 };
 
 #endif

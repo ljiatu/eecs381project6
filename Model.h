@@ -58,7 +58,6 @@ public:
     std::shared_ptr<Structure> get_structure_ptr(const std::string& name) const;
     // get a pointer to the structure that is the closest to the specified agent
     std::shared_ptr<Structure> get_closest_structure_ptr(std::shared_ptr<Agent> agent_ptr) const;
-
     // is there an agent with this name?
     bool is_agent_present(const std::string& name) const;
     // add a new agent; assumes none with the same name
@@ -67,11 +66,8 @@ public:
     std::shared_ptr<Agent> get_agent_ptr(const std::string& name) const;
     // get a pointer to the agent that is the closest to the specified agent
     std::shared_ptr<Agent> get_closest_agent_ptr(std::shared_ptr<Agent> agent_ptr, double range) const;
-
-    std::vector<std::map<std::string, std::shared_ptr<Agent>>::value_type> get_agents_in_range (std::shared_ptr<Agent> agent_ptr, double range) const;
-    // std::vector<Agents_t::value_type> get_agents_in_range (std::shared_ptr<Agent> agent_ptr, double range) const;
-
-
+    // get a pointer to the agent with least health in a specified range
+    std::shared_ptr<Agent> get_weakest_agent_in_range (std::shared_ptr<Agent> agent_ptr, double range) const;
     // remove the specified shared_ptr from Model's sim_objects and agents containers
     void remove_agent(std::shared_ptr<Agent> dead_agent);
     

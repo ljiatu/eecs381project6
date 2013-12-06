@@ -19,6 +19,10 @@ public:
     Warrior(const std::string& name_, Point location_, int strength_, double range_);
     virtual ~Warrior() = 0;
     
+    // Override is_attacking
+    bool is_attacking() const override
+    {return attacking;}
+
     // update warrior status
     void update() override;
 
@@ -32,9 +36,6 @@ public:
 
     // output information about the current state
     void describe() const override;
-
-    bool is_attacking() const
-    {return attacking;}
 
 protected:
     // getters for attacking state and range value

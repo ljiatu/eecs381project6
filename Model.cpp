@@ -143,14 +143,12 @@ shared_ptr<Agent> Model::get_closest_agent_ptr(shared_ptr<Agent> agent_ptr, doub
 {
     // First find out all agents who are within the attacking range of the specified agent,
     // excluding the specified agent her/himself. All agents will be sorted by name.
-    // vector<Agents_t::value_type> reachable_agents;
-    // copy_if(agents.begin(), agents.end(), back_inserter(reachable_agents),
-    //     [agent_ptr, range](Agents_t::value_type agent)
-    //         {return cartesian_distance((agent.second) -> get_location(), agent_ptr -> get_location()) <= range
-    //             && agent.second != agent_ptr;});
+    vector<Agents_t::value_type> reachable_agents;
+    copy_if(agents.begin(), agents.end(), back_inserter(reachable_agents),
+        [agent_ptr, range](Agents_t::value_type agent)
+            {return cartesian_distance((agent.second) -> get_location(), agent_ptr -> get_location()) <= range
+                && agent.second != agent_ptr;});
     // If no body is within range, return a null shared_ptr.
-
-    vector<Agents_t::value_type> reachable_agents = get_agents_in_range(agent_ptr, range);
     if(reachable_agents.empty()) {
         return shared_ptr<Agent>();
     }
@@ -177,14 +175,34 @@ shared_ptr<Agent> Model::get_closest_agent_ptr(shared_ptr<Agent> agent_ptr, doub
     return it -> second;
 }
 
-vector<std::map<std::string, std::shared_ptr<Agent>>::value_type> Model::get_agents_in_range (std::shared_ptr<Agent> agent_ptr, double range) const
+shared_ptr<Agent> Model::get_weakest_agent_in_range (shared_ptr<Agent> agent_ptr, double range) const
 {
     vector<std::map<std::string, std::shared_ptr<Agent>>::value_type> reachable_agents;
     copy_if(agents.begin(), agents.end(), back_inserter(reachable_agents),
         [agent_ptr, range](Agents_t::value_type agent)
             {return cartesian_distance((agent.second) -> get_location(), agent_ptr -> get_location()) <= range
-                && agent.second != agent_ptr;});
-    return reachable_agents;
+                && agent.second != agent_ptr && !(agent.second) ->is_attacking() 
+                && (agent.second)->get_health()!=5;});
+
+    if (!reachable_agents.size())
+        return shared_ptr<Agent>();
+
+    class Agent_health_comp {
+    public:
+        Agent_health_comp(shared_ptr<Agent> target_) : target(target_)
+        {}
+        bool operator()(Agents_t::value_type agent1, Agents_t::value_type agent2)
+        {
+            int health1 = (agent1.second) -> get_health(),
+                   health2 = (agent2.second) -> get_health();
+            return health1 < health2;
+        }
+    private:
+        shared_ptr<Agent> target;
+    };
+    Agent_health_comp comparator(agent_ptr);
+    auto it = min_element(reachable_agents.begin(), reachable_agents.end(), comparator);
+    return it->second;
 }
 
 void Model::remove_agent(shared_ptr<Agent> dead_agent)
