@@ -5,7 +5,7 @@
 #include "Structure.h"
 #include "Structure_factory.h"
 #include "Utility.h"
-#include "Views.h"
+#include "View.h"
 #include <algorithm>
 #include <cassert>
 #include <iterator>

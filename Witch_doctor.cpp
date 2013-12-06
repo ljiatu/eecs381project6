@@ -45,24 +45,28 @@ void Witch_doctor::update()
 		auto target_ptr = target.lock();
 		if(!target_ptr || !target_ptr -> is_alive()) {
 			cout << get_name() << ": Patient is dead." << endl;
-			healing = false;
-			target.reset();
-			return;
+            stop_healing();
+            return;
 		}
 		// Test if the patient is in range. 
 		distance = cartesian_distance(get_location(), target_ptr -> get_location());
 		if(distance > initial_Witch_doctor_range_c) {
 			cout << get_name()  << ": Patient is now out of range." << endl;
-			healing = false;
-			target.reset();
-			return;
-		}	
+            stop_healing();
+            return;
+		}
+        // Test if the patient is now healed.
 		if (target_ptr->get_health() == 5) {
 			cout << get_name()  << ": Patient is now perfectly healthy!" << endl;
-			healing = false;
-			target.reset();
-			return;
+            stop_healing();
+            return;
 		}	
+        // Test if the patient is now attacking other Agents.
+        if (target_ptr->is_attacking()) {
+            cout << get_name() << ": Patient is now in fight with other Agents!" <<endl;
+            stop_healing();
+            return;
+        }
 		// Start healing process.
 		target = target_ptr;
 		cout << get_name() << ": I'm healing " << target_ptr->get_name() << "!"<< endl;
@@ -134,3 +138,8 @@ void Witch_doctor::print_attack_word() const {
     cout << get_name()  << ": " << Witch_doctor_attack_message_c << endl;
 }
 
+void Witch_doctor::stop_healing() {
+	healing = false;
+	target.reset();
+	return;
+}

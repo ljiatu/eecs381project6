@@ -17,5 +17,9 @@ struct Error {
 // that determines whether a name is in-use or not.
 // Any valid name string must be at least this long.
 const size_t num_letters_c = 2;
+// the size of a local view
+const int local_view_size_c = 9;
+// the scale of a local view
+const double local_view_scale_c = 2.0;
 
 #endif

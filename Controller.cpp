@@ -4,7 +4,12 @@
 #include "Model.h"
 #include "Structure_factory.h"
 #include "Utility.h"
-#include "Views.h"
+#include "View.h"
+#include "Local_view.h"
+#include "Map_view.h"
+#include "Health_view.h"
+#include "Amounts_view.h"
+#include "Combat_view.h"
 #include <algorithm>
 #include <cassert>
 #include <cctype>

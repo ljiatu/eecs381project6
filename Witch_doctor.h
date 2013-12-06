@@ -23,6 +23,8 @@ public:
         
 
 private:
+    // Stop healing process, discarding target and set healing to false
+    void stop_healing();
 	int curing_strength;
 	std::weak_ptr<Agent> target;
 	bool healing;
