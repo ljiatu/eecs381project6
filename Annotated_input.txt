@@ -1,0 +1,31 @@
+Zug move 12 12
+Bug move 12 12
+go go go go
+status
+Zug attack Bug 
+go go 
+Zola heal Bug
+go 
+go go go status 
+Zug attack Zola
+go go status
+Zola heal Zola
+go 
+train Bethune Witch_doctor 12 12 
+Zug attack Bethune
+go
+go 
+Bethune move 0 25
+go
+Bethune heal Bethune
+status go go go go
+Iriel move 0 25
+Zug move 0 25
+go go go go 
+status
+Iriel attack Merry
+Zug attack Iriel
+go status go status go status go status go status go 
+status 
+go status
+quit

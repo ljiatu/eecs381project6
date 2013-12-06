@@ -116,6 +116,7 @@ void Witch_doctor::start_healing (std::shared_ptr<Agent> target_ptr)
     }
 	cout << get_name() << ": I'm healing " << target_ptr->get_name() << "!"<< endl;
 	target_ptr->gain_health(curing_strength);
+	target = target_ptr;
 	healing = true;
 }
 

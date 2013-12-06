@@ -1,0 +1,551 @@
+// First, Move Zug and Bug to Zola's location:
+
+Time 0: Enter command: Zug move 12 12 Bug move 12 12 go go go go status
+Zug: I'm on the way
+
+Time 0: Enter command: Bug: I'm on the way
+
+Time 0: Enter command: Bug: step...
+Farm Rivendale now has 52.00
+Farm Sunnybrook now has 52.00
+Zug: step...
+
+Time 1: Enter command: Bug: I'm there!
+Farm Rivendale now has 54.00
+Farm Sunnybrook now has 54.00
+Zug: step...
+
+Time 2: Enter command: Farm Rivendale now has 56.00
+Farm Sunnybrook now has 56.00
+Zug: step...
+
+Time 3: Enter command: Farm Rivendale now has 58.00
+Farm Sunnybrook now has 58.00
+Zug: I'm there!
+
+Time 4: Enter command: Soldier Bug at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Stopped
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 58.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 58.00
+Witch_doctor Zola at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Not healing
+Soldier Zug at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+
+// Showing Witch_doctor's attack behavior:
+Time 4: Enter command: Zola attack Zug status
+Zola: I don't want to attack!
+
+// Initiate a duel between Zug and Bug
+Time 4: Enter command: Zug attack Bug go go 
+Zug: I'm attacking!
+
+Time 4: Enter command: Farm Rivendale now has 60.00
+Farm Sunnybrook now has 60.00
+Zug: Clang!
+Bug: Ouch!
+Bug: I'm attacking!
+
+Time 5: Enter command: Bug: Clang!
+Zug: Ouch!
+Farm Rivendale now has 62.00
+Farm Sunnybrook now has 62.00
+Zug: Clang!
+Bug: Ouch!
+
+// Ask Zola to heal Bug, but he cowardly refuses:
+Time 6: Enter command: Zola heal Bug
+Zola: I don't want to caught myself between Warriors!
+
+// Bug dies:
+
+Time 6: Enter command: go
+Bug: Clang!
+Zug: Ouch!
+Farm Rivendale now has 64.00
+Farm Sunnybrook now has 64.00
+Zug: Clang!
+Bug: Arrggh!
+Zug: I triumph!
+
+// Now, Zola sees wounded Bug is now safe to heal and starts // healing:
+
+Time 7: Enter command: go go go status 
+Farm Rivendale now has 66.00
+Farm Sunnybrook now has 66.00
+Zola: Start healing Zug!
+
+Time 8: Enter command: Farm Rivendale now has 68.00
+Farm Sunnybrook now has 68.00
+Zola: I'm healing Zug!
+Zug: I'm feeling better!
+
+Time 9: Enter command: Farm Rivendale now has 70.00
+Farm Sunnybrook now has 70.00
+Zola: I'm healing Zug!
+Zug: I'm feeling better!
+
+Time 10: Enter command: Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Stopped
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 70.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 70.00
+Witch_doctor Zola at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Healing Zug
+Soldier Zug at (12.00, 12.00)
+   Health is 3
+   Stopped
+   Not attacking
+
+// Zug attacks Zola, and Zola now counter-attacks
+
+Time 10: Enter command: Zug attack Zola
+Zug: I'm attacking!
+
+Time 10: Enter command: go go status
+Farm Rivendale now has 72.00
+Farm Sunnybrook now has 72.00
+Zola: I'm healing Zug!
+Zug: I'm feeling better!
+Zug: Clang!
+Zola: Ouch!
+Zola: I'm counter-attacking!
+
+Time 11: Enter command: Farm Rivendale now has 74.00
+Farm Sunnybrook now has 74.00
+Zola: Take Poison!
+Zug: Ouch!
+Zug: Clang!
+Zola: Ouch!
+
+Time 12: Enter command: Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Stopped
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 74.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 74.00
+Witch_doctor Zola at (12.00, 12.00)
+   Health is 1
+   Stopped
+   Attacking Zug
+   Not healing
+Soldier Zug at (12.00, 12.00)
+   Health is 3
+   Stopped
+   Attacking Zola
+
+// Zola tries to save himself in vain, and shortly dies 
+// in the battle:
+
+Time 12: Enter command: Zola heal Zola
+Zola: I'm busy counter-attacking!
+
+Time 12: Enter command: go
+Farm Rivendale now has 76.00
+Farm Sunnybrook now has 76.00
+Zola: Take Poison!
+Zug: Ouch!
+Zug: Clang!
+Zola: Arrggh!
+Zug: I triumph!
+
+// Train a new Witch_doctor named Bethune
+
+Time 13: Enter command: train Bethune Witch_doctor 12 12 
+
+// Tell Zug to attack Bethune
+
+Time 13: Enter command: Zug attack Bethune
+go
+Zug: I'm attacking!
+
+Time 13: Enter command: Farm Rivendale now has 78.00
+Farm Sunnybrook now has 78.00
+Zug: Clang!
+Bethune: Ouch!
+Bethune: I'm counter-attacking!
+
+// Bethune runs away!
+
+Time 14: Enter command: Bethune move 0 25
+go status
+Bethune: I'm on the way
+
+Time 14: Enter command: Bethune: step...
+Bethune: Target is now out of range
+Farm Rivendale now has 80.00
+Farm Sunnybrook now has 80.00
+Zug: Target is now out of range
+
+Time 15: Enter command: Witch_doctor Bethune at (8.61, 15.67)
+   Health is 3
+   Moving at speed 5.00 to (0.00, 25.00)
+   Not attacking
+   Not healing
+Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Stopped
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 80.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 80.00
+Soldier Zug at (12.00, 12.00)
+   Health is 2
+   Stopped
+   Not attacking
+
+// Now Bethune out of Zug's range, he's now not attacking he // cannot attack Zug either, and finally okay to heal himself:
+
+Time 15: Enter command: Bethune heal Bethune
+Bethune: I'm healing Bethune!
+Bethune: I'm feeling better!
+
+// As Bethune is saving himself, Iriel and Zug are closing in:
+
+Time 15: Enter command: Iriel move 0 25
+Zug move 0 25
+status go go go Iriel: I'm on the way
+
+Time 15: Enter command: Zug: I'm on the way
+
+Time 15: Enter command: 
+Witch_doctor Bethune at (8.61, 15.67)
+   Health is 4
+   Moving at speed 5.00 to (0.00, 25.00)
+   Not attacking
+   Healing Bethune
+Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Moving at speed 5.00 to (0.00, 25.00)
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 80.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 80.00
+Soldier Zug at (12.00, 12.00)
+   Health is 2
+   Moving at speed 5.00 to (0.00, 25.00)
+   Not attacking
+
+Time 15: Enter command: Bethune: step...
+Bethune: I'm healing Bethune!
+Bethune: I'm feeling better!
+Iriel: step...
+Farm Rivendale now has 82.00
+Farm Sunnybrook now has 82.00
+Zug: step...
+
+Time 16: Enter command: Bethune: step...
+Bethune: Patient is now perfectly healthy!
+Iriel: step...
+Farm Rivendale now has 84.00
+Farm Sunnybrook now has 84.00
+Zug: step...
+
+Time 17: Enter command: Bethune: I'm there!
+Iriel: step...
+Farm Rivendale now has 86.00
+Farm Sunnybrook now has 86.00
+Zug: step...
+
+// Now Perfectly healthy Bethune sees wounded Zug coming
+// heals the latter as he comes in range.
+
+Time 18: Enter command: go status
+Bethune: Start healing Zug!
+Iriel: step...
+Iriel: I'm attacking!
+Farm Rivendale now has 88.00
+Farm Sunnybrook now has 88.00
+Zug: I'm there!
+
+Time 19: Enter command: Witch_doctor Bethune at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Healing Zug
+Archer Iriel at (3.23, 27.10)
+   Health is 5
+   Moving at speed 5.00 to (0.00, 25.00)
+   Attacking Bethune
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 88.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 88.00
+Soldier Zug at (0.00, 25.00)
+   Health is 2
+   Stopped
+   Not attacking
+
+// Instruct Iriel to attack Peasant Merry to let Bethune
+// live longer for further demonstration:
+
+Time 19: Enter command: Iriel attack Merry
+Iriel: I'm attacking!
+
+Time 19: Enter command: Zug attack Iriel
+Zug: Target is out of range!
+
+// Bethune continues to save Bug, while Merry is under attack:
+Time 19: Enter command: go status
+Bethune: I'm healing Zug!
+Zug: I'm feeling better!
+Iriel: I'm there!
+Iriel: Twang!
+Merry: Ouch!
+Farm Rivendale now has 90.00
+Farm Sunnybrook now has 90.00
+
+Time 20: Enter command: Witch_doctor Bethune at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Healing Zug
+Archer Iriel at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Attacking Merry
+Peasant Merry at (0.00, 25.00)
+   Health is 4
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 90.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 90.00
+Soldier Zug at (0.00, 25.00)
+   Health is 3
+   Stopped
+   Not attacking
+
+Time 20: Enter command: go go status
+Bethune: I'm healing Zug!
+Zug: I'm feeling better!
+Iriel: Twang!
+Merry: Ouch!
+Farm Rivendale now has 92.00
+Farm Sunnybrook now has 92.00
+
+Time 21: Enter command: Bethune: I'm healing Zug!
+Zug: I'm feeling better!
+Iriel: Twang!
+Merry: Ouch!
+Farm Rivendale now has 94.00
+Farm Sunnybrook now has 94.00
+
+Time 22: Enter command: Witch_doctor Bethune at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Healing Zug
+Archer Iriel at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Attacking Merry
+Peasant Merry at (0.00, 25.00)
+   Health is 2
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 94.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 94.00
+Soldier Zug at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Not attacking
+
+// Now, Zug is perfectly healthy, Bethune is now turning to
+// save Merry.
+// But unfortunately, Merry is dead as Bethune comes too late:
+
+Time 22: Enter command: go go status
+Bethune: Patient is now perfectly healthy!
+Iriel: Twang!
+Merry: Ouch!
+Farm Rivendale now has 96.00
+Farm Sunnybrook now has 96.00
+
+Time 23: Enter command: Bethune: Start healing Merry!
+Iriel: Twang!
+Merry: Arrggh!
+Iriel: I triumph!
+Iriel: I'm attacking!
+Farm Rivendale now has 98.00
+Farm Sunnybrook now has 98.00
+
+Time 24: Enter command: Witch_doctor Bethune at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Healing dead patient
+Archer Iriel at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Attacking Bethune
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 98.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 98.00
+Soldier Zug at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Not attacking
+
+// Iriel now turns to attack Bethune, the Witch_doctor counter-attacks:
+
+Time 24: Enter command: go status
+Bethune: Patient is dead.
+Iriel: Twang!
+Bethune: Ouch!
+Bethune: I'm counter-attacking!
+Farm Rivendale now has 100.00
+Farm Sunnybrook now has 100.00
+
+Time 25: Enter command: Witch_doctor Bethune at (0.00, 25.00)
+   Health is 4
+   Stopped
+   Attacking Iriel
+   Not healing
+Archer Iriel at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Attacking Bethune
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 100.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 100.00
+Soldier Zug at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Not attacking
+
+// The end
+Time 25: Enter command: quit
+Done
