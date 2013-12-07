@@ -10,8 +10,6 @@ using std::cout; using std::endl;
 using std::shared_ptr;
 using std::string;
 
-// the initial health of an agent
-const int initial_health_c = 5;
 // the initial speed of an agent
 const double initial_speed_c = 5.0;
 

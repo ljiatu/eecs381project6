@@ -134,33 +134,3 @@ void Visual_view::list_outliers(int size, double scale, Point origin) const
         cout << " outside the map" << endl;
     }
 }
-
-vector<string> Visual_view::list_insiders(int size, double scale, Point origin) const
-{
-    vector<string> insiders;
-    int ix, iy;
-    for(auto it = object_locations.begin(); it != object_locations.end(); ++it) {
-        if(get_subscripts(size, scale, origin, ix, iy, it -> second)) {
-            insiders.push_back(it -> first);
-        }
-    }
-    return insiders;
-}
-
-bool Visual_view::get_subscripts(int size, double scale, Point origin,
-                                 int &ix, int &iy, Point location) const
-{
-	// adjust with origin and scale
-	Cartesian_vector subscripts = (location - origin) / scale;
-	// truncate coordinates to integer after taking the floor
-	// floor function will return the largest integer smaller than the supplied value
-	// even for negative values, so -0.05 => -1., which will be outside the array.
-	ix = int(floor(subscripts.delta_x));
-	iy = int(floor(subscripts.delta_y));
-	// if out of range, return false
-	if ((ix < 0) || (ix >= size) || (iy < 0) || (iy >= size)) {
-		return false;
-	} else {
-		return true;
-    }
-}

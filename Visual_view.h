@@ -32,18 +32,9 @@ protected:
     // given the current size, scale and origin of the map
     void list_outliers(int size, double scale, Point origin) const;
 
-    // return the name of all objects that will be shown inside the map
-    std::vector<std::string> list_insiders(int size, double scale, Point origin) const;
-
 private:
     // locations for all objects that are currently in the view
     std::map<std::string, Point> object_locations;
-
-    // Get the subscripts of an object based on 
-    // map size, scale, origin and object location.
-    // Return true if the location is within the grid, false if not.
-    bool get_subscripts(int size, double scale, Point origin,
-                        int &ix, int &iy, Point location) const;
 };
 
 #endif

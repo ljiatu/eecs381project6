@@ -66,7 +66,7 @@ public:
     std::shared_ptr<Agent> get_agent_ptr(const std::string& name) const;
     // get a pointer to the agent that is the closest to the specified agent
     std::shared_ptr<Agent> get_closest_agent_ptr(std::shared_ptr<Agent> agent_ptr, double range) const;
-    // get a pointer to the agent with least health in a specified range
+    // get a pointer to the agent with least health in the specified range
     std::shared_ptr<Agent> get_weakest_agent_in_range (std::shared_ptr<Agent> agent_ptr, double range) const;
     // remove the specified shared_ptr from Model's sim_objects and agents containers
     void remove_agent(std::shared_ptr<Agent> dead_agent);

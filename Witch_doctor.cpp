@@ -58,7 +58,7 @@ void Witch_doctor::update()
             return;
 		}
         // Test if the patient is now healed.
-		if (target_ptr->get_health() == 5) {
+		if (target_ptr -> get_health() == initial_health_c) {
 			cout << get_name()  << ": Patient is now perfectly healthy!" << endl;
             stop_healing();
             return;
@@ -93,13 +93,13 @@ void Witch_doctor::describe() const
 	}
 }
 
-void Witch_doctor::start_attacking(std::shared_ptr<Agent> target_ptr)
+void Witch_doctor::start_attacking(shared_ptr<Agent> target_ptr)
 {
 	// Witch_doctor cannot voluntarily attack other Agents.
 	throw Error(get_name() + ": I don't want to attack!");
 }
 
-void Witch_doctor::start_healing(std::shared_ptr<Agent> target_ptr) 
+void Witch_doctor::start_healing(shared_ptr<Agent> target_ptr) 
 {
 	// The Witch_doctor can heal himself when he is counter-attacking
 	// his aggressor.
@@ -117,7 +117,7 @@ void Witch_doctor::start_healing(std::shared_ptr<Agent> target_ptr)
     if(distance > initial_Witch_doctor_range_c) {
         throw Error(get_name() + ": Patient is out of range!");
     }
-    if (target_ptr -> get_health() == 5) {
+    if (target_ptr -> get_health() == initial_health_c) {
     	throw Error(get_name() + ": This patient is perfectly healthy!");
     }
 	cout << get_name() << ": I'm healing " << target_ptr -> get_name() << "!"<< endl;
@@ -126,7 +126,7 @@ void Witch_doctor::start_healing(std::shared_ptr<Agent> target_ptr)
 	healing = true;
 }
 
-void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Agent> attacker_ptr)
+void Witch_doctor::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
 {
 	healing = false;
     lose_health(attack_strength);

@@ -15,8 +15,7 @@ void Local_view::draw()
 {
     cout << "Local view for: " << name << endl;
     Point location;
-    bool exists = get_object_location(location, name);
-    if(exists) {
+    if(get_object_location(location, name)) {
         // re-compute the origin if the object is still there
         compute_origin(location);
     }
