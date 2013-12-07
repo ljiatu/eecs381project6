@@ -6,7 +6,7 @@
 #include <iostream>
 #include <iterator>
 #include <utility>
-
+#include <cmath>
 using std::copy; using std::ostream_iterator;
 using std::cout; using std::endl;
 using std::ios;
@@ -15,6 +15,7 @@ using std::map;
 using std::setw;
 using std::string;
 using std::vector;
+using std::floor;
 
 // we display the coordinates every three rows and columns
 const int show_coord_num_c = 3;
