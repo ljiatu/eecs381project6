@@ -7,7 +7,7 @@ LFLAGS = -g
 OBJS = p6_main.o Model.o View.o Visual_view.o List_view.o Local_view.o Map_view.o Health_view.o Amounts_view.o Combat_view.o Controller.o
 OBJS += Sim_object.o Structure.o Moving_object.o Agent.o
 OBJS += Farm.o Town_Hall.o
-OBJS += Peasant.o Warriors.o Witch_doctor.o
+OBJS += Peasant.o Warrior.o Soldier.o Archer.o Witch_doctor.o
 OBJS += Agent_factory.o Structure_factory.o
 OBJS += Geometry.o Utility.o
 PROG = proj6exe
@@ -68,10 +68,16 @@ Agent.o: Agent.cpp Agent.h Moving_object.h Sim_object.h Model.h Geometry.h Utili
 Peasant.o: Peasant.cpp Peasant.h Agent.h Moving_object.h Sim_object.h Geometry.h Utility.h
 	$(CC) $(CFLAGS) Peasant.cpp
 
-Warriors.o: Warriors.cpp Warriors.h Agent.h Moving_object.h Sim_object.h Geometry.h Utility.h
-	$(CC) $(CFLAGS) Warriors.cpp
+Warrior.o: Warrior.cpp Warrior.h Agent.h Moving_object.h Sim_object.h Geometry.h Utility.h
+	$(CC) $(CFLAGS) Warrior.cpp
 
-Witch_doctor.o: Witch_doctor.h Witch_doctor.cpp Warriors.h Agent.h Moving_object.h Sim_object.h Geometry.h Utility.h
+Soldier.o: Soldier.cpp Soldier.h Warrior.h Agent.h Moving_object.h Sim_object.h Geometry.h Utility.h
+	$(CC) $(CFLAGS) Soldier.cpp
+
+Archer.o: Archer.cpp Archer.h Warrior.h Agent.h Moving_object.h Sim_object.h Geometry.h Utility.h
+	$(CC) $(CFLAGS) Archer.cpp
+
+Witch_doctor.o: Witch_doctor.h Witch_doctor.cpp Warrior.h Agent.h Moving_object.h Sim_object.h Geometry.h Utility.h
 	$(CC) $(CFLAGS) Witch_doctor.cpp
 
 Moving_object.o: Moving_object.cpp Moving_object.h Geometry.h Utility.h

@@ -1,7 +1,7 @@
 #ifndef WITCH_DOCTOR_H
 #define WITCH_DOCTOR_H
 
-#include "Warriors.h"
+#include "Warrior.h"
 #include <memory>
 
 class Witch_doctor : public Warrior {
@@ -21,13 +21,15 @@ public:
  	// Override Warrior's behavior to print "Take Poison!"
 	void print_attack_word() const override;
         
-
 private:
-    // Stop healing process, discarding target and set healing to false
-    void stop_healing();
 	int curing_strength;
 	std::weak_ptr<Agent> target;
 	bool healing;
+
+    // Start healing process, save the target pointer.
+    void initiate_healing(std::shared_ptr<Agent> target_ptr);
+    // Stop healing process, discarding target and set healing to false.
+    void stop_healing();
 };
 
 #endif

@@ -6,7 +6,7 @@
 #include <vector>
 
 // List view shows information in a list format.
-class List_view : public virtual View {
+class List_view : public View {
 public:
     virtual ~List_view()
     {}

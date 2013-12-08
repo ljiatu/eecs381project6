@@ -177,14 +177,16 @@ shared_ptr<Agent> Model::get_closest_agent_ptr(shared_ptr<Agent> agent_ptr, doub
 
 shared_ptr<Agent> Model::get_weakest_agent_in_range (shared_ptr<Agent> agent_ptr, double range) const
 {
-    vector<Agents_t::value_type> reachable_agents;
-    copy_if(agents.begin(), agents.end(), back_inserter(reachable_agents),
+    // Create a vector of Agents who is in range of the supplied agent pointer who is not attacking
+    // and whose health is below full health.
+    vector<Agents_t::value_type> qualified_patients;
+    copy_if(agents.begin(), agents.end(), back_inserter(qualified_patients),
         [agent_ptr, range](Agents_t::value_type agent)
             {return cartesian_distance((agent.second) -> get_location(), agent_ptr -> get_location()) <= range
-                && agent.second != agent_ptr && !(agent.second) -> is_attacking() 
+                && !(agent.second) -> is_attacking() 
                 && (agent.second) -> get_health() != initial_health_c;});
 
-    if (reachable_agents.empty()) {
+    if (qualified_patients.empty()) {
         return shared_ptr<Agent>();
     }
 
@@ -202,7 +204,7 @@ shared_ptr<Agent> Model::get_weakest_agent_in_range (shared_ptr<Agent> agent_ptr
         shared_ptr<Agent> target;
     };
     Agent_health_comp comparator(agent_ptr);
-    auto it = min_element(reachable_agents.begin(), reachable_agents.end(), comparator);
+    auto it = min_element(qualified_patients.begin(), qualified_patients.end(), comparator);
     return it -> second;
 }
 

@@ -7,7 +7,7 @@
 #include <vector>
 
 // Base class for all views that print out a map.
-class Visual_view : public virtual View {
+class Visual_view : public View {
 public:
     virtual ~Visual_view()
     {}
