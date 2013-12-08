@@ -37,7 +37,8 @@ void Warrior::update()
     }
 
     print_attack_word();
-    target_ptr -> take_hit(strength, shared_from_this());
+	attack();
+    //target_ptr -> take_hit(strength, shared_from_this());
     if(!target_ptr -> is_alive()) {
         cout << get_name() << ": I triumph!" << endl;
         attacking = false;

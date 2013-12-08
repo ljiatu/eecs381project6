@@ -28,6 +28,8 @@ public:
  	// Override Warrior's behavior to print "Take Poison!"
 	void print_attack_word() const override;
         
+	void attack() override;
+
 private:
 	int curing_strength;
 	std::weak_ptr<Agent> target;

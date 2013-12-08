@@ -7,7 +7,7 @@
 
 using std::cout; using std::endl;
 using std::shared_ptr; using std::weak_ptr;
-using std::string;
+using std::string; using std::static_pointer_cast;
 
 // the initial curing strength of a witch doctor
 const int initial_attack_strength_c = 1;
@@ -132,6 +132,11 @@ void Witch_doctor::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
 void Witch_doctor::print_attack_word() const
 {
     cout << get_name()  << ": " << witch_doctor_attack_message_c << endl;
+}
+
+void Witch_doctor::attack()
+{
+	get_target() -> take_hit(get_strength(), static_pointer_cast<Witch_doctor>(shared_from_this()));
 }
 
 void Witch_doctor::initiate_healing(shared_ptr<Agent> target_ptr)

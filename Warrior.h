@@ -35,11 +35,15 @@ public:
     virtual void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) = 0;
     virtual void take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr) = 0;
     virtual void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr) = 0;
-
+	
 protected:
-    // getters for attacking state and range value
-    double get_range() const
+    // getters
+	double get_range() const
     {return range;}
+	int get_strength() const
+	{return strength;}
+	std::shared_ptr<Agent> get_target() const
+	{return target.lock();}
 
     // set attacking to true
     void initiate_attacking()
@@ -53,8 +57,9 @@ private:
     double range;
     std::weak_ptr<Agent> target;
     bool attacking;
-
-    // Prints out what the warrior says when attacking.
+	// Overridden by leaf classes to return the shared_ptr of derived type. 
+    virtual void attack() = 0;
+	// Prints out what the warrior says when attacking.
     // This has empty implementation in case some future warriors
     // are silent when attacking.
     virtual void print_attack_word() const
