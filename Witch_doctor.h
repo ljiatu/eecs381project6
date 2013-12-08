@@ -7,29 +7,36 @@
 class Witch_doctor : public Warrior {
 public:
 	Witch_doctor (const std::string& name, Point location_);
+	
 	// Implements Doctor's behavior.
 	void update() override;
+	
 	// Output information about current state.
 	void describe() const override;
+	
 	// Override Warrior's attack function, Doctor can't voluntarily attack.
     void start_attacking(std::shared_ptr<Agent> target_ptr) override;
+	
 	// Start the healing process.
 	// Throws exception if the target is out of range, or not alive.
 	void start_healing (std::shared_ptr<Agent> target_ptr) override; 
-	// Override Agent't take_hit to poison the attacker
-
+	
+	// Override Agent's take_hit to poison the attacker
 	void take_hit(int attack_strength, std::shared_ptr<Agent> attacker_ptr) override;
+	
 	// Override Witch_doctor's under attack behavior from Soldier.
-
     void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) override;
+	
 	// Override Witch_doctor's under attack behavior from Archer.
     void take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr) override;
+	
 	// Override Witch_doctor's under attack behavior from Witch_doctor.
     void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr) override;
    
  	// Override Warrior's behavior to print "Take Poison!"
 	void print_attack_word() const override;
 
+	// Override Warrior's attack() to provide specific Witch_doctor behavior while under attack.
 	void attack() override;
 
 private:

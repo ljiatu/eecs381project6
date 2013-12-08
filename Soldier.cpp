@@ -21,7 +21,7 @@ Soldier::Soldier(const string& name_, Point location_) :
 
 void Soldier::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
 {
-    lose_health(attack_strength);
+	lose_health(attack_strength);
     if(!is_attacking() && is_alive() && attacker_ptr -> is_alive()) {
         initiate_attacking();
         set_target(attacker_ptr);
@@ -36,11 +36,10 @@ void Soldier::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_pt
 {
 	// Solider's defend function, if he "happens to be able to defend himself"
 	// Then he will not lose health this time under attack.
-	cout << "Called\n";
 	int defend = rand()%10;
 	if (defend<=5) {
-		cout << get_name() << ": I failed to shield myself!" <<endl;
 		lose_health(attack_strength);
+		cout << get_name() << ": I failed to shield myself!" <<endl;
 	}
 	else {
 		cout << get_name() << ": Tang!" <<endl;
@@ -86,5 +85,8 @@ void Soldier::print_attack_word() const
 
 void Soldier::attack() 
 {
+//	shared_ptr<Soldier> soldier = static_pointer_cast<Soldier>(get_target());
+//	cout << typeid(*static_pointer_cast<Soldier>(get_target())).name()<<endl;
 	get_target()->take_hit(get_strength(), static_pointer_cast<Soldier>(shared_from_this()));
+//	soldier->take_a_hit(get_strength(), static_pointer_cast<Soldier>(shared_from_this()));
 }

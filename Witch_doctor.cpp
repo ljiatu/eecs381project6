@@ -187,7 +187,6 @@ void Witch_doctor::initiate_healing(shared_ptr<Agent> target_ptr)
 	return;
 }
 
-
 void Witch_doctor::stop_healing()
 {
 	healing = false;

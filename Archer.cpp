@@ -8,7 +8,7 @@
 
 using std::cout; using std::endl;
 using std::shared_ptr; using std::weak_ptr;
-using std::string;
+using std::string; using std::static_pointer_cast;
 
 // the initial attacking strength of an archer
 const int initial_archer_strength_c = 1;
@@ -51,15 +51,22 @@ void Archer::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
 }
 
 // Override Archer's under attack behavior from Soldier.
-// Soldier will draw his shield to defend himself. But he doesn's succeed in doing so
-// everytime. If he succeeds, he will not lose_health in this round.
-
+// Archer will run to the farthest strcture, then he can uses his superior range and
+// attacks Soldier on his way.
 void Archer::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr)
-{}
+{
+	lose_health(attack_strength);
+	if(!is_attacking() && is_alive() && attacker_ptr->is_alive()) {
+		auto farthest_structure_ptr = Model::get_instance().get_farthest_structure_ptr(shared_from_this());
+		cout << get_name() << ": I'm going to run away to " << farthest_structure_ptr->get_name() << endl;
+		move_to(farthest_structure_ptr->get_location());
+	}
+}
 
 // Override Archer's under attack behavior from Archer.
 // Archer will draw his dagger to defend himself if the other Archer is within a close range.
-// Else, they will run away and continue shooting each other.
+// Else, they will continue shooting each other without running away.
+
 void Archer::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
 {
 	double dist = cartesian_distance(get_location(), attacker_ptr->get_location());
@@ -73,8 +80,7 @@ void Archer::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
 }
 
 // Override Archer's under attack behavior from Witch_doctor.
-// Soldier will draw his shield to defend himself. But he doesn's succeed in doing so
-// everytime. If he succeeds, he will not lose_health in this round.
+// Use default behavior.
 void Archer::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr)
 {
     lose_health(attack_strength);
@@ -94,4 +100,9 @@ void Archer::describe() const
 void Archer::print_attack_word() const
 {
     cout << get_name()  << ": " << archer_message_c << endl;
+}
+
+void Archer::attack()
+{
+	get_target()->take_hit(get_strength(), static_pointer_cast<Archer>(shared_from_this()));
 }
