@@ -29,12 +29,6 @@ public:
 
     // output information about the current state
     void describe() const override;
-
-    // take_hit for each type of warrior
-    void take_hit(int attack_strength, std::shared_ptr<Agent> attacker_ptr) override = 0;
-    virtual void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) = 0;
-    virtual void take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr) = 0;
-    virtual void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr) = 0;
 	
 protected:
     // getters

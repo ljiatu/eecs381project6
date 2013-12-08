@@ -49,9 +49,19 @@ void Agent::stop()
     }
 }
 
-void Agent::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
+void Agent::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) 
 {
-    lose_health(attack_strength);
+	lose_health(attack_strength);
+}
+
+void Agent::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
+{
+	lose_health(attack_strength);
+}
+
+void Agent::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr)
+{
+	lose_health(attack_strength);
 }
 
 void Agent::update()

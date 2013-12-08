@@ -40,16 +40,6 @@ void Archer::update()
     }
 }
 
-void Archer::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
-{
-    lose_health(attack_strength);
-    if(is_alive() && attacker_ptr -> is_alive()) {
-        auto closest_structure_ptr = Model::get_instance().get_closest_structure_ptr(shared_from_this());
-        cout << get_name() << ": I'm going to run away to " << closest_structure_ptr -> get_name() << endl;
-        move_to(closest_structure_ptr -> get_location());
-    }
-}
-
 // Override Archer's under attack behavior from Soldier.
 // Archer will run to the farthest strcture, then he can uses his superior range and
 // attacks Soldier on his way.

@@ -8,6 +8,11 @@ using std::cout; using std::endl;
 using std::shared_ptr; using std::string;
 using std::rand; using std::static_pointer_cast;
 
+// soldier defend threshold, if rand returns higher than this value,
+// then he is able to defend himself.
+const int soldier_defend_threshold_c = 1;
+// soldier defend random generation range value.
+const int soldier_defend_rand_range_c = 2;
 // the initial attacking strength of a soldier
 const int initial_soldier_strength_c = 2;
 // the initial attacking range of a soldier
@@ -19,16 +24,6 @@ Soldier::Soldier(const string& name_, Point location_) :
     Warrior(name_, location_, initial_soldier_strength_c, initial_soldier_range_c)
 {}
 
-void Soldier::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
-{
-	lose_health(attack_strength);
-    if(!is_attacking() && is_alive() && attacker_ptr -> is_alive()) {
-        initiate_attacking();
-        set_target(attacker_ptr);
-        cout << get_name() << ": I'm attacking!" << endl;
-    }
-}
-
 // Override Soldier's under attack behavior from Soldier.
 // Soldier will draw his shield to defend himself. But he doesn's succeed in doing so
 // everytime. If he succeeds, he will not lose_health in this round.
@@ -36,8 +31,8 @@ void Soldier::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_pt
 {
 	// Solider's defend function, if he "happens to be able to defend himself"
 	// Then he will not lose health this time under attack.
-	int defend = rand()%10;
-	if (defend<=5) {
+	int defend = rand()%soldier_defend_rand_range_c;
+	if (defend < soldier_defend_threshold_c) {
 		lose_health(attack_strength);
 		cout << get_name() << ": I failed to shield myself!" <<endl;
 	}

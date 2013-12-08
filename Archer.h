@@ -11,9 +11,6 @@ public:
     // always try to find the closest target to attack at
     void update() override;
 
-    // Overrides Agent's take_hit to run away when attacked.
-    void take_hit(int attack_strength, std::shared_ptr<Agent> attacker_ptr) override;
-	
 	// Override Archer's under attack behavior from Soldier.
     void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) override;
 	

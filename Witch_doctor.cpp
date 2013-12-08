@@ -120,17 +120,6 @@ void Witch_doctor::start_healing(shared_ptr<Agent> target_ptr)
     initiate_healing(target_ptr);
 }
 
-void Witch_doctor::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
-{
-	healing = false;
-    lose_health(attack_strength);
-    if(!is_attacking() && is_alive() && attacker_ptr -> is_alive()) {
-        cout << get_name() << ": I'm counter-attacking!" << endl;
-        initiate_attacking();
-        set_target(attacker_ptr);
-    }
-}
-
 // Override Witch_doctor's under attack behavior from Soldier.
 // Running away to the farthest structure, starts healing himself once out of Soldier's
 // attack-range(implemented in update).

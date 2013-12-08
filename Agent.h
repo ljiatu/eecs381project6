@@ -13,6 +13,9 @@ If its heath <= 0, it is dead, and removed from the world.
 #include <memory>
 
 class Structure;
+class Soldier;
+class Witch_doctor;
+class Archer;
 
 class Agent : public Sim_object, public std::enable_shared_from_this<Agent>, 
               private Moving_object {
@@ -52,8 +55,10 @@ public:
     // The attacking Agent identifies itself with its this pointer.
     // A derived class can override this function.
     // The function lose_health is called to handle the effect of the attack.
-    virtual void take_hit(int attack_strength, std::shared_ptr<Agent> attacker_ptr);
-    
+	virtual void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr);
+	virtual void take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr);
+	virtual void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr);
+
     // update the moving state and Agent state of this object.
     void update() override;
     
