@@ -1,4 +1,6 @@
 #include "Witch_doctor.h"
+#include "Archer.h"
+#include "Soldier.h"
 #include "Model.h"
 #include "Structure.h"
 #include "Utility.h"
@@ -129,6 +131,42 @@ void Witch_doctor::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
     }
 }
 
+// Override Witch_doctor's under attack behavior from Soldier.
+// Running away to the farthest structure, starts healing himself once out of Soldier's
+// attack-range(implemented in update).
+void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr)
+{
+	healing = false;
+	lose_health(attack_strength);
+	if(!is_attacking() && is_alive() && attacker_ptr->is_alive()) {
+		auto farthest_structure_ptr = Model::get_instance().get_farthest_structure_ptr(shared_from_this());
+		cout << get_name() << ": Soldier's attacking me!" << endl;
+		cout << get_name() << ": I'm going to run away to " << farthest_structure_ptr->get_name() << endl;
+		move_to(farthest_structure_ptr->get_location());
+	}
+}
+
+// Override Witch_doctor's under attack behavior from Archer.
+// Since by Witch_doctor has no advange by running away from Archer whose range is far,
+// Witch_doctor will run towards his attacker and start attacking.
+void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
+{
+	healing = false;
+    lose_health(attack_strength);
+    if(!is_attacking() && is_alive() && attacker_ptr -> is_alive()) {
+        cout << get_name() << ": Archer, I'm coming for you!" << endl;
+		move_to(attacker_ptr->get_location());
+        initiate_attacking();
+        set_target(attacker_ptr);
+    }
+}
+
+// Override Witch_doctor's under attack behavior from Witch_doctor.
+void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr)
+{
+	cout << get_name() << ": How is this possible?" << endl;
+}
+
 void Witch_doctor::print_attack_word() const
 {
     cout << get_name()  << ": " << witch_doctor_attack_message_c << endl;
@@ -136,6 +174,8 @@ void Witch_doctor::print_attack_word() const
 
 void Witch_doctor::attack()
 {
+	// Call target's take_hit function with target's exact type;
+	// Dispatch to appropriate action.
 	get_target() -> take_hit(get_strength(), static_pointer_cast<Witch_doctor>(shared_from_this()));
 }
 
@@ -146,6 +186,7 @@ void Witch_doctor::initiate_healing(shared_ptr<Agent> target_ptr)
 	healing = true;
 	return;
 }
+
 
 void Witch_doctor::stop_healing()
 {

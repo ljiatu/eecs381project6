@@ -107,6 +107,28 @@ shared_ptr<Structure> Model::get_closest_structure_ptr(shared_ptr<Agent> agent_p
     return min_element(structures.begin(), structures.end(), comparator) -> second;
 }
 
+shared_ptr<Structure> Model::get_farthest_structure_ptr(shared_ptr<Agent> agent_ptr) const
+{
+    // Compare which of the two structures is closer to the agent.
+    // Return true if the first structure is further; return false otherwise.
+    class Structure_dist_comp {
+    public:
+        Structure_dist_comp(shared_ptr<Agent> target_) : target(target_)
+        {}
+        bool operator()(Structures_t::value_type structure1, Structures_t::value_type structure2)
+        {
+            double dist1 = cartesian_distance((structure1.second) -> get_location(), target -> get_location()),
+                   dist2 = cartesian_distance((structure2.second) -> get_location(), target -> get_location());
+            return dist1 > dist2;
+        }
+    private:
+        shared_ptr<Agent> target;
+    };
+
+    Structure_dist_comp comparator(agent_ptr);
+    return max_element(structures.begin(), structures.end(), comparator) -> second;
+}
+
 bool Model::is_agent_present(const string& name) const
 {
     auto it = agents.find(name.substr(0, num_letters_c));

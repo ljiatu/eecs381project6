@@ -42,6 +42,8 @@ protected:
     {return range;}
 	int get_strength() const
 	{return strength;}
+	void set_strength(int new_strength)
+	{strength = new_strength;}
 	std::shared_ptr<Agent> get_target() const
 	{return target.lock();}
 

@@ -58,6 +58,8 @@ public:
     std::shared_ptr<Structure> get_structure_ptr(const std::string& name) const;
     // get a pointer to the structure that is the closest to the specified agent
     std::shared_ptr<Structure> get_closest_structure_ptr(std::shared_ptr<Agent> agent_ptr) const;
+    // get a pointer to the structure that is the farthest to the specified agent
+    std::shared_ptr<Structure> get_farthest_structure_ptr(std::shared_ptr<Agent> agent_ptr) const;
     // is there an agent with this name?
     bool is_agent_present(const std::string& name) const;
     // add a new agent; assumes none with the same name

@@ -13,18 +13,16 @@ public:
 
     // Overrides Agent's take_hit to run away when attacked.
     void take_hit(int attack_strength, std::shared_ptr<Agent> attacker_ptr) override;
-    void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) override
-    {}
-    void take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr) override
-    {}
-    void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr) override
-    {}
+    void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) override;
+    void take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr) override;
+    void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr) override;
 
     // output information about current state of the archer
     void describe() const override;
 
     // override Warrior behavior to print "Twang!"
     void print_attack_word() const override;
+
 };
 
 #endif

@@ -1,4 +1,6 @@
 #include "Archer.h"
+#include "Soldier.h"
+#include "Witch_doctor.h"
 #include "Model.h"
 #include "Structure.h"
 #include "Utility.h"
@@ -12,9 +14,12 @@ using std::string;
 const int initial_archer_strength_c = 1;
 // the initial attacking range of an archer
 const double initial_archer_range_c = 6.0;
-// message printed when attacking
+// the message printed when attacking
 const char* const archer_message_c = "Twang!";
-
+// the attack range within which the archer uses dagger
+const int initial_dagger_range_c = 2;
+// the attack strength of a dagger
+const int initial_dagger_strength_c = 2;
 Archer::Archer(const string& name_, Point location_) :
     Warrior(name_, location_, initial_archer_strength_c, initial_archer_range_c)
 {}
@@ -36,6 +41,41 @@ void Archer::update()
 }
 
 void Archer::take_hit(int attack_strength, shared_ptr<Agent> attacker_ptr)
+{
+    lose_health(attack_strength);
+    if(is_alive() && attacker_ptr -> is_alive()) {
+        auto closest_structure_ptr = Model::get_instance().get_closest_structure_ptr(shared_from_this());
+        cout << get_name() << ": I'm going to run away to " << closest_structure_ptr -> get_name() << endl;
+        move_to(closest_structure_ptr -> get_location());
+    }
+}
+
+// Override Archer's under attack behavior from Soldier.
+// Soldier will draw his shield to defend himself. But he doesn's succeed in doing so
+// everytime. If he succeeds, he will not lose_health in this round.
+
+void Archer::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr)
+{}
+
+// Override Archer's under attack behavior from Archer.
+// Archer will draw his dagger to defend himself if the other Archer is within a close range.
+// Else, they will run away and continue shooting each other.
+void Archer::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
+{
+	double dist = cartesian_distance(get_location(), attacker_ptr->get_location());
+	lose_health(attack_strength);
+	if (is_alive() && attacker_ptr -> is_alive()) {
+		if (dist < initial_dagger_range_c) {
+			set_strength(initial_dagger_strength_c);
+			cout << get_name() << ": I'm drawing my dagger!" << endl;
+		}
+	}
+}
+
+// Override Archer's under attack behavior from Witch_doctor.
+// Soldier will draw his shield to defend himself. But he doesn's succeed in doing so
+// everytime. If he succeeds, he will not lose_health in this round.
+void Archer::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr)
 {
     lose_health(attack_strength);
     if(is_alive() && attacker_ptr -> is_alive()) {
