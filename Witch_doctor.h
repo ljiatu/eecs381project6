@@ -18,6 +18,13 @@ public:
 	void start_healing (std::shared_ptr<Agent> target_ptr) override; 
 	// Override Agent't take_hit to poison the attacker
 	void take_hit(int attack_strength, std::shared_ptr<Agent> attacker_ptr) override;
+    void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) override
+    {}
+    void take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr) override
+    {}
+    void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr) override
+    {}
+
  	// Override Warrior's behavior to print "Take Poison!"
 	void print_attack_word() const override;
         

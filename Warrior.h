@@ -4,10 +4,13 @@
 #include "Agent.h"
 #include <memory>
 
+class Soldier;
+class Archer;
+class Witch_doctor;
+
 class Warrior : public Agent {
 public:
     Warrior(const std::string& name_, Point location_, int strength_, double range_);
-    virtual ~Warrior() = 0;
     
     // Override is_attacking
     bool is_attacking() const override
@@ -26,6 +29,12 @@ public:
 
     // output information about the current state
     void describe() const override;
+
+    // take_hit for each type of warrior
+    void take_hit(int attack_strength, std::shared_ptr<Agent> attacker_ptr) override = 0;
+    virtual void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) = 0;
+    virtual void take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr) = 0;
+    virtual void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr) = 0;
 
 protected:
     // getters for attacking state and range value

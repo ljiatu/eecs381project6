@@ -13,9 +13,6 @@ Warrior::Warrior(const string& name_, Point location_, int strength_, double ran
     attacking(false)
 {}
 
-Warrior::~Warrior()
-{}
-
 void Warrior::update()
 {
     Agent::update();
