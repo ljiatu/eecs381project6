@@ -53,13 +53,11 @@ private:
     double range;
     std::weak_ptr<Agent> target;
     bool attacking;
-	// Overridden by leaf classes to return the shared_ptr of derived type. 
+
+    // First prints out what the warrior says when attacking.
+	// Then let the target take hit. This shall be overriden by derived classes
+    // so that the exact attacker type can be used.
     virtual void attack() = 0;
-	// Prints out what the warrior says when attacking.
-    // This has empty implementation in case some future warriors
-    // are silent when attacking.
-    virtual void print_attack_word() const
-    {}
 };
 
 #endif

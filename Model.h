@@ -112,6 +112,18 @@ private:
     ~Model()
     {}
 
+    // Compare which of the two structures is closer to the agent.
+    // Return true if the first structure is further; return false otherwise.
+    // This comparator class is private so that the Structures_t type alias can be utilized.
+    class Structure_dist_comp {
+    public:
+        Structure_dist_comp(std::shared_ptr<Agent> target_) : target(target_)
+        {}
+        bool operator()(Structures_t::value_type structure1, Structures_t::value_type structure2) const;
+    private:
+        std::shared_ptr<Agent> target;
+    };
+
     // disallow copy/move construction or assignment
     Model(const Model&) = delete;
     Model& operator= (const Model&)  = delete;

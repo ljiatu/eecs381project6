@@ -20,8 +20,10 @@ const char* const archer_message_c = "Twang!";
 const int initial_dagger_range_c = 2;
 // the attack strength of a dagger
 const int initial_dagger_strength_c = 2;
+
 Archer::Archer(const string& name_, Point location_) :
-    Warrior(name_, location_, initial_archer_strength_c, initial_archer_range_c)
+    Warrior(name_, location_, initial_archer_strength_c, initial_archer_range_c),
+    dagger_strength(initial_dagger_strength_c), dagger_range(initial_dagger_range_c)
 {}
 
 void Archer::update()
@@ -40,9 +42,6 @@ void Archer::update()
     }
 }
 
-// Override Archer's under attack behavior from Soldier.
-// Archer will run to the farthest strcture, then he can uses his superior range and
-// attacks Soldier on his way.
 void Archer::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr)
 {
 	lose_health(attack_strength);
@@ -53,24 +52,18 @@ void Archer::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr
 	}
 }
 
-// Override Archer's under attack behavior from Archer.
-// Archer will draw his dagger to defend himself if the other Archer is within a close range.
-// Else, they will continue shooting each other without running away.
-
 void Archer::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
 {
-	double dist = cartesian_distance(get_location(), attacker_ptr->get_location());
 	lose_health(attack_strength);
 	if (is_alive() && attacker_ptr -> is_alive()) {
-		if (dist < initial_dagger_range_c) {
+        double dist = cartesian_distance(get_location(), attacker_ptr->get_location());
+		if (dist <= dagger_range) {
 			set_strength(initial_dagger_strength_c);
 			cout << get_name() << ": I'm drawing my dagger!" << endl;
 		}
 	}
 }
 
-// Override Archer's under attack behavior from Witch_doctor.
-// Use default behavior.
 void Archer::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr)
 {
     lose_health(attack_strength);
@@ -87,12 +80,8 @@ void Archer::describe() const
     Warrior::describe();
 }
 
-void Archer::print_attack_word() const
-{
-    cout << get_name()  << ": " << archer_message_c << endl;
-}
-
 void Archer::attack()
 {
-	get_target()->take_hit(get_strength(), static_pointer_cast<Archer>(shared_from_this()));
+    cout << get_name()  << ": " << archer_message_c << endl;
+	get_target() -> take_hit(get_strength(), static_pointer_cast<Archer>(shared_from_this()));
 }

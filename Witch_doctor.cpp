@@ -120,9 +120,6 @@ void Witch_doctor::start_healing(shared_ptr<Agent> target_ptr)
     initiate_healing(target_ptr);
 }
 
-// Override Witch_doctor's under attack behavior from Soldier.
-// Running away to the farthest structure, starts healing himself once out of Soldier's
-// attack-range(implemented in update).
 void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr)
 {
 	healing = false;
@@ -135,9 +132,6 @@ void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Soldier> attack
 	}
 }
 
-// Override Witch_doctor's under attack behavior from Archer.
-// Since by Witch_doctor has no advange by running away from Archer whose range is far,
-// Witch_doctor will run towards his attacker and start attacking.
 void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
 {
 	healing = false;
@@ -150,19 +144,15 @@ void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Archer> attacke
     }
 }
 
-// Override Witch_doctor's under attack behavior from Witch_doctor.
 void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr)
 {
+    // not expected to be visible
 	cout << get_name() << ": How is this possible?" << endl;
-}
-
-void Witch_doctor::print_attack_word() const
-{
-    cout << get_name()  << ": " << witch_doctor_attack_message_c << endl;
 }
 
 void Witch_doctor::attack()
 {
+    cout << get_name()  << ": " << witch_doctor_attack_message_c << endl;
 	// Call target's take_hit function with target's exact type;
 	// Dispatch to appropriate action.
 	get_target() -> take_hit(get_strength(), static_pointer_cast<Witch_doctor>(shared_from_this()));

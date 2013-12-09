@@ -16,6 +16,7 @@
 using std::copy_if; using std::back_inserter;
 using std::make_pair;
 using std::map;
+using std::max_element;
 using std::min_element;
 using std::set;
 using std::shared_ptr;
@@ -87,44 +88,12 @@ shared_ptr<Structure> Model::get_structure_ptr(const string& name) const
 
 shared_ptr<Structure> Model::get_closest_structure_ptr(shared_ptr<Agent> agent_ptr) const
 {
-    // Compare which of the two structures is closer to the agent.
-    // Return true if the first structure is closer; return false otherwise.
-    class Structure_dist_comp {
-    public:
-        Structure_dist_comp(shared_ptr<Agent> target_) : target(target_)
-        {}
-        bool operator()(Structures_t::value_type structure1, Structures_t::value_type structure2)
-        {
-            double dist1 = cartesian_distance((structure1.second) -> get_location(), target -> get_location()),
-                   dist2 = cartesian_distance((structure2.second) -> get_location(), target -> get_location());
-            return dist1 < dist2;
-        }
-    private:
-        shared_ptr<Agent> target;
-    };
-
     Structure_dist_comp comparator(agent_ptr);
     return min_element(structures.begin(), structures.end(), comparator) -> second;
 }
 
 shared_ptr<Structure> Model::get_farthest_structure_ptr(shared_ptr<Agent> agent_ptr) const
 {
-    // Compare which of the two structures is closer to the agent.
-    // Return true if the first structure is further; return false otherwise.
-    class Structure_dist_comp {
-    public:
-        Structure_dist_comp(shared_ptr<Agent> target_) : target(target_)
-        {}
-        bool operator()(Structures_t::value_type structure1, Structures_t::value_type structure2)
-        {
-            double dist1 = cartesian_distance((structure1.second) -> get_location(), target -> get_location()),
-                   dist2 = cartesian_distance((structure2.second) -> get_location(), target -> get_location());
-            return dist1 > dist2;
-        }
-    private:
-        shared_ptr<Agent> target;
-    };
-
     Structure_dist_comp comparator(agent_ptr);
     return max_element(structures.begin(), structures.end(), comparator) -> second;
 }
@@ -332,6 +301,13 @@ Model::Model() : time(0)
 	agent_ptr = create_agent("Zola", "Witch_doctor", Point(12., 12.));
     sim_objects[get_initial_letters(agent_ptr)] = agent_ptr;
     agents[get_initial_letters(agent_ptr)] = agent_ptr;
+}
+
+bool Model::Structure_dist_comp::operator()(Structures_t::value_type structure1, Structures_t::value_type structure2) const
+{
+    double dist1 = cartesian_distance((structure1.second) -> get_location(), target -> get_location()),
+           dist2 = cartesian_distance((structure2.second) -> get_location(), target -> get_location());
+    return dist1 < dist2;
 }
 
 // Return the first num_letters_c letters of the name of the object

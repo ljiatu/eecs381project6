@@ -1,9 +1,7 @@
-/*
-Main module. Your project must use this file as-is
-*/
+/* Main module. */
 
-#include <iostream>
 #include "Controller.h"
+#include <iostream>
 
 using namespace std;
 
@@ -11,7 +9,6 @@ using namespace std;
 int main ()
 {		
 	// Set output to show two decimal places
-//	cout << fixed << setprecision(2) << endl;
 	cout.setf(ios::fixed, ios::floatfield);
 	cout.precision(2);
 

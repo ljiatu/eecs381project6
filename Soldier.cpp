@@ -24,19 +24,15 @@ Soldier::Soldier(const string& name_, Point location_) :
     Warrior(name_, location_, initial_soldier_strength_c, initial_soldier_range_c)
 {}
 
-// Override Soldier's under attack behavior from Soldier.
-// Soldier will draw his shield to defend himself. But he doesn's succeed in doing so
-// everytime. If he succeeds, he will not lose_health in this round.
-void Soldier::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr)
+void Soldier::take_hit(int attack_strength, shared_ptr<Soldier> attacker_ptr)
 {
 	// Solider's defend function, if he "happens to be able to defend himself"
 	// Then he will not lose health this time under attack.
-	int defend = rand()%soldier_defend_rand_range_c;
+	int defend = rand() % soldier_defend_rand_range_c;
 	if (defend < soldier_defend_threshold_c) {
 		lose_health(attack_strength);
 		cout << get_name() << ": I failed to shield myself!" <<endl;
-	}
-	else {
+	} else {
 		cout << get_name() << ": Tang!" <<endl;
 		cout << get_name() << ": I shielded myself!" << endl;
 	}
@@ -47,9 +43,7 @@ void Soldier::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_pt
     }
 }
 
-// Override Soldier's under attack behavior from Archer.
-// Soldier's not smart enough to choose best action, therefore he choose to blindly attack!
-void Soldier::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
+void Soldier::take_hit(int attack_strength, shared_ptr<Archer> attacker_ptr)
 {
     lose_health(attack_strength);
     if(!is_attacking() && is_alive() && attacker_ptr -> is_alive()) {
@@ -59,11 +53,9 @@ void Soldier::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr
     }
 }
 
-// Override Soldier's under attack behavior from Witch_doctor.
-// Should never be called because Witch_doctor always run towards farthest structure
-// while under attack from Soldier.
-void Soldier::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr)
+void Soldier::take_hit(int attack_strength, shared_ptr<Witch_doctor> attacker_ptr)
 {
+    // not expected to be visible
 	cout << get_name() << ": I'm poisoned!" << endl; 
 }
 
@@ -73,15 +65,8 @@ void Soldier::describe() const
     Warrior::describe();
 }
 
-void Soldier::print_attack_word() const
-{
-    cout << get_name()  << ": " << soldier_message_c << endl;
-}
-
 void Soldier::attack() 
 {
-//	shared_ptr<Soldier> soldier = static_pointer_cast<Soldier>(get_target());
-//	cout << typeid(*static_pointer_cast<Soldier>(get_target())).name()<<endl;
-	get_target()->take_hit(get_strength(), static_pointer_cast<Soldier>(shared_from_this()));
-//	soldier->take_a_hit(get_strength(), static_pointer_cast<Soldier>(shared_from_this()));
+    cout << get_name()  << ": " << soldier_message_c << endl;
+	get_target() -> take_hit(get_strength(), static_pointer_cast<Soldier>(shared_from_this()));
 }

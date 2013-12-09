@@ -123,7 +123,7 @@ void Agent::start_attacking(shared_ptr<Agent> target_ptr)
     throw Error(get_name() + ": Sorry, I can't attack!");
 }
 
-void Agent::start_healing (std::shared_ptr<Agent> target_ptr) 
+void Agent::start_healing(std::shared_ptr<Agent> target_ptr) 
 {
     throw Error(get_name() + ": Sorry, I can't save!");
 }
