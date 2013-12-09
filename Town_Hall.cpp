@@ -1,5 +1,3 @@
-#define NDEBUG
-
 #include "Town_Hall.h"
 #include "Model.h"
 #include <cassert>

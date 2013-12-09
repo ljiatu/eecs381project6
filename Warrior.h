@@ -36,17 +36,11 @@ protected:
     {return range;}
 	int get_strength() const
 	{return strength;}
-	void set_strength(int new_strength)
-	{strength = new_strength;}
 	std::shared_ptr<Agent> get_target() const
 	{return target.lock();}
 
-    // set attacking to true
-    void initiate_attacking()
-    {attacking = true;}
-    // set the target as specified
-    void set_target(std::shared_ptr<Agent> target_)
-    {target = target_;}
+    // print the attack word and start attacking the specified target
+    void initiate_attacking(const std::string& message, std::shared_ptr<Agent> target_ptr);
 
 private:
     int strength;

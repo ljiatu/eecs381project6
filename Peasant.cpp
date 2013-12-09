@@ -1,5 +1,3 @@
-#define NDEBUG
-
 #include "Peasant.h"
 #include "Model.h"
 #include "Structure.h"

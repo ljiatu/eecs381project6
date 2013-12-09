@@ -1,5 +1,3 @@
-#define NDEBUG
-
 #include "Agent.h"
 #include "Model.h"
 #include "Utility.h"
@@ -49,17 +47,17 @@ void Agent::stop()
     }
 }
 
-void Agent::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr) 
+void Agent::take_hit(int attack_strength, std::shared_ptr<Soldier> soldier_ptr) 
 {
 	lose_health(attack_strength);
 }
 
-void Agent::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
+void Agent::take_hit(int attack_strength, std::shared_ptr<Archer> archer_ptr)
 {
 	lose_health(attack_strength);
 }
 
-void Agent::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr)
+void Agent::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> doctor_ptr)
 {
 	lose_health(attack_strength);
 }

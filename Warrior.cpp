@@ -56,9 +56,7 @@ void Warrior::start_attacking(shared_ptr<Agent> target_ptr)
     if(distance > range) {
         throw Error(get_name() + ": Target is out of range!");
     }
-    cout << get_name() << ": I'm attacking!" << endl;
-    target = target_ptr;
-    attacking = true;
+    initiate_attacking("I'm attacking!", target_ptr);
 }
 
 void Warrior::stop()
@@ -79,4 +77,11 @@ void Warrior::describe() const
     } else {
         cout << "   Attacking dead target" << endl;
     }
+}
+
+void Warrior::initiate_attacking(const string& message, shared_ptr<Agent> target_ptr)
+{
+    cout << get_name() << ": " << message << endl;
+    target = target_ptr;
+    attacking = true;
 }

@@ -1,7 +1,7 @@
 #include "Witch_doctor.h"
 #include "Archer.h"
-#include "Soldier.h"
 #include "Model.h"
+#include "Soldier.h"
 #include "Structure.h"
 #include "Utility.h"
 #include <cassert>
@@ -9,7 +9,8 @@
 
 using std::cout; using std::endl;
 using std::shared_ptr; using std::weak_ptr;
-using std::string; using std::static_pointer_cast;
+using std::static_pointer_cast;
+using std::string;
 
 // the initial curing strength of a witch doctor
 const int initial_attack_strength_c = 1;
@@ -30,8 +31,9 @@ void Witch_doctor::update()
 	// First, Update according the Warrior Behavior for attacking behaviors.
 	Warrior::update();
 	// Witch_doctor can only in one of healing/attacking state, therefore return if attacking.
-	if (is_attacking())
+	if (is_attacking()) {
 		return;
+    }
 	// If the Witch_doctor is not healing patients, then choose the one with weakest health 
 	// within his range to heal; and change state to healing.
 	if (!healing) {
@@ -120,40 +122,41 @@ void Witch_doctor::start_healing(shared_ptr<Agent> target_ptr)
     initiate_healing(target_ptr);
 }
 
-void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr)
+void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Soldier> soldier_ptr)
 {
-	healing = false;
-	lose_health(attack_strength);
-	if(!is_attacking() && is_alive() && attacker_ptr->is_alive()) {
+    under_attack(attack_strength);
+	if(!is_attacking() && is_alive() && soldier_ptr -> is_alive()) {
 		auto farthest_structure_ptr = Model::get_instance().get_farthest_structure_ptr(shared_from_this());
 		cout << get_name() << ": Soldier's attacking me!" << endl;
-		cout << get_name() << ": I'm going to run away to " << farthest_structure_ptr->get_name() << endl;
-		move_to(farthest_structure_ptr->get_location());
+		cout << get_name() << ": I'm going to run away to " << farthest_structure_ptr -> get_name() << endl;
+		move_to(farthest_structure_ptr -> get_location());
 	}
 }
 
-void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr)
+void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Archer> archer_ptr)
 {
-	healing = false;
-    lose_health(attack_strength);
-    if(!is_attacking() && is_alive() && attacker_ptr -> is_alive()) {
-        cout << get_name() << ": Archer, I'm coming for you!" << endl;
-		move_to(attacker_ptr->get_location());
-        initiate_attacking();
-        set_target(attacker_ptr);
+    under_attack(attack_strength);
+    if(!is_attacking() && is_alive() && archer_ptr -> is_alive()) {
+		move_to(archer_ptr -> get_location());
+        initiate_attacking("Archer, I'm coming for you!", archer_ptr);
     }
 }
 
-void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr)
+void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> doctor_ptr)
 {
-    // not expected to be visible
-	cout << get_name() << ": How is this possible?" << endl;
+    under_attack(attack_strength);
+    if(!is_attacking() && is_alive() && doctor_ptr -> is_alive()) {
+        // the message is not expected to be visible
+        initiate_attacking("Doctor, I'm coming for you!", doctor_ptr);
+    }
 }
 
 void Witch_doctor::attack()
 {
+    auto target_ptr = get_target();
+    assert(target_ptr);
     cout << get_name()  << ": " << witch_doctor_attack_message_c << endl;
-	// Call target's take_hit function with target's exact type;
+	// Call target's take_hit function with target's exact type.
 	// Dispatch to appropriate action.
 	get_target() -> take_hit(get_strength(), static_pointer_cast<Witch_doctor>(shared_from_this()));
 }
@@ -171,4 +174,10 @@ void Witch_doctor::stop_healing()
 	healing = false;
 	target.reset();
 	return;
+}
+
+void Witch_doctor::under_attack(int attack_strength)
+{
+    healing = false;
+    lose_health(attack_strength);
 }

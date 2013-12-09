@@ -55,9 +55,9 @@ public:
     // The attacking Agent identifies itself with its shared_from_this pointer.
     // A derived class can override this function.
     // The function lose_health is called to handle the effect of the attack.
-	virtual void take_hit(int attack_strength, std::shared_ptr<Soldier> attacker_ptr);
-	virtual void take_hit(int attack_strength, std::shared_ptr<Archer> attacker_ptr);
-	virtual void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> attacker_ptr);
+	virtual void take_hit(int attack_strength, std::shared_ptr<Soldier> soldier_ptr);
+	virtual void take_hit(int attack_strength, std::shared_ptr<Archer> archer_ptr);
+	virtual void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> doctor_ptr);
 
     // update the moving state and Agent state of this object.
     void update() override;
@@ -77,7 +77,7 @@ public:
     virtual void start_attacking(std::shared_ptr<Agent> target_ptr);
 
     // Throws exception that an Agent cannot heal. 
-    virtual void start_healing (std::shared_ptr<Agent> target_ptr);
+    virtual void start_healing(std::shared_ptr<Agent> target_ptr);
 
 protected:
     // calculate loss of health due to hit.

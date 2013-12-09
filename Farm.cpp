@@ -1,5 +1,3 @@
-#define NDEBUG
-
 #include "Farm.h"
 #include "Model.h"
 #include <cassert>
