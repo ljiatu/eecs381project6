@@ -1,0 +1,12 @@
+train Doostang Archer 20 42
+go
+Doostang move 5 5 go go go
+Zug move 20 38 go go status
+go
+status
+go status go status
+go status go status
+go status go status
+quit
+
+

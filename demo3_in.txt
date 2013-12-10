@@ -1,0 +1,14 @@
+status
+Zola move 15 20 go go go
+Zola attack Bug
+go
+go
+Zug move 15 20 go go go
+status
+Zug attack Bug
+go go go
+Zug move 0 0 Iriel move 15 25 go go go
+go go go
+go status
+quit
+

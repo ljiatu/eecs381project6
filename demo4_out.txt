@@ -1,0 +1,421 @@
+
+Time 0: Enter command: 
+Time 0: Enter command: Doostang: I'm attacking!
+Iriel: I'm attacking!
+Farm Rivendale now has 52.00
+Farm Sunnybrook now has 52.00
+
+Time 1: Enter command: Doostang: I'm on the way
+
+Time 1: Enter command: Doostang: step...
+Doostang: Twang!
+Iriel: Ouch!
+Iriel: Twang!
+Doostang: Ouch!
+Farm Rivendale now has 54.00
+Farm Sunnybrook now has 54.00
+
+Time 2: Enter command: Doostang: step...
+Doostang: Target is now out of range
+Doostang: I'm attacking!
+Iriel: Target is now out of range
+Farm Rivendale now has 56.00
+Farm Sunnybrook now has 56.00
+
+Time 3: Enter command: Doostang: step...
+Doostang: Twang!
+Zug: Ouch!
+Zug: Watch out, Archer!
+Farm Rivendale now has 58.00
+Farm Sunnybrook now has 58.00
+Zug: Target is now out of range
+
+Time 4: Enter command: Zug: I'm on the way
+
+Time 4: Enter command: Doostang: step...
+Doostang: Target is now out of range
+Doostang: I'm attacking!
+Farm Rivendale now has 60.00
+Farm Sunnybrook now has 60.00
+Zug: step...
+
+Time 5: Enter command: Doostang: step...
+Doostang: Twang!
+Bug: Ouch!
+Bug: Watch out, Archer!
+Iriel: I'm attacking!
+Farm Rivendale now has 62.00
+Farm Sunnybrook now has 62.00
+Zug: I'm there!
+
+Time 6: Enter command: Soldier Bug at (15.00, 20.00)
+   Health is 4
+   Stopped
+   Attacking Doostang
+Archer Doostang at (10.61, 18.83)
+   Health is 4
+   Moving at speed 5.00 to (5.00, 5.00)
+   Attacking Bug
+Archer Iriel at (20.00, 38.00)
+   Health is 4
+   Stopped
+   Attacking Zug
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 62.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 62.00
+Witch_doctor Zola at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Not healing
+Soldier Zug at (20.00, 38.00)
+   Health is 4
+   Stopped
+   Not attacking
+
+Time 6: Enter command: Bug: Target is now out of range
+Doostang: step...
+Doostang: Target is now out of range
+Doostang: I'm attacking!
+Iriel: Twang!
+Zug: Ouch!
+Zug: Watch out, Archer!
+Farm Rivendale now has 64.00
+Farm Sunnybrook now has 64.00
+Zug: Clang!
+Iriel: Ouch!
+Iriel: Soldier's attacking me! I'm going to run away to Rivendale
+Iriel: I'm on the way
+
+Time 7: Enter command: Soldier Bug at (15.00, 20.00)
+   Health is 4
+   Stopped
+   Not attacking
+Archer Doostang at (8.73, 14.20)
+   Health is 4
+   Moving at speed 5.00 to (5.00, 5.00)
+   Attacking Zola
+Archer Iriel at (20.00, 38.00)
+   Health is 2
+   Moving at speed 5.00 to (10.00, 10.00)
+   Attacking Zug
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 64.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 64.00
+Witch_doctor Zola at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Not healing
+Soldier Zug at (20.00, 38.00)
+   Health is 3
+   Stopped
+   Attacking Iriel
+
+Time 7: Enter command: Doostang: step...
+Doostang: Twang!
+Zola: Ouch!
+Zola: I'm on the way
+Zola: Archer, I'm coming for you!
+Iriel: step...
+Iriel: Twang!
+Zug: Ouch!
+Farm Rivendale now has 66.00
+Farm Sunnybrook now has 66.00
+Zola: step...
+Zola: Take Poison!
+Doostang: Ouch!
+Doostang: Doctor's attacking me! I'm going to run away to Rivendale
+Doostang: I'm on the way
+Zug: Target is now out of range
+
+Time 8: Enter command: Soldier Bug at (15.00, 20.00)
+   Health is 4
+   Stopped
+   Not attacking
+Archer Doostang at (6.85, 9.56)
+   Health is 3
+   Moving at speed 5.00 to (10.00, 10.00)
+   Attacking Zola
+Archer Iriel at (18.32, 33.29)
+   Health is 2
+   Moving at speed 5.00 to (10.00, 10.00)
+   Attacking Zug
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 66.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 66.00
+Witch_doctor Zola at (7.48, 9.86)
+   Health is 4
+   Moving at speed 5.00 to (6.85, 9.56)
+   Attacking Doostang
+   Not healing
+Soldier Zug at (20.00, 38.00)
+   Health is 2
+   Stopped
+   Not attacking
+
+Time 8: Enter command: Doostang: I'm there!
+Doostang: Twang!
+Zola: Ouch!
+Iriel: step...
+Iriel: Target is now out of range
+Farm Rivendale now has 68.00
+Farm Sunnybrook now has 68.00
+Zola: I'm there!
+Zola: Target is now out of range
+Zola: Start healing Zola!
+
+Time 9: Enter command: Soldier Bug at (15.00, 20.00)
+   Health is 4
+   Stopped
+   Not attacking
+Archer Doostang at (10.00, 10.00)
+   Health is 3
+   Stopped
+   Attacking Zola
+Archer Iriel at (16.64, 28.58)
+   Health is 2
+   Moving at speed 5.00 to (10.00, 10.00)
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 68.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 68.00
+Witch_doctor Zola at (6.85, 9.56)
+   Health is 3
+   Stopped
+   Not attacking
+   Healing Zola
+Soldier Zug at (20.00, 38.00)
+   Health is 2
+   Stopped
+   Not attacking
+
+Time 9: Enter command: Doostang: Twang!
+Zola: Ouch!
+Zola: I'm on the way
+Zola: Archer, I'm coming for you!
+Iriel: step...
+Iriel: I'm attacking!
+Farm Rivendale now has 70.00
+Farm Sunnybrook now has 70.00
+Zola: I'm there!
+Zola: Take Poison!
+Doostang: Ouch!
+Doostang: Doctor's attacking me! I'm going to run away to Rivendale
+Doostang: I'm already there
+
+Time 10: Enter command: Soldier Bug at (15.00, 20.00)
+   Health is 4
+   Stopped
+   Not attacking
+Archer Doostang at (10.00, 10.00)
+   Health is 2
+   Stopped
+   Attacking Zola
+Archer Iriel at (14.95, 23.87)
+   Health is 2
+   Moving at speed 5.00 to (10.00, 10.00)
+   Attacking Bug
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 70.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 70.00
+Witch_doctor Zola at (10.00, 10.00)
+   Health is 2
+   Stopped
+   Attacking Doostang
+   Not healing
+Soldier Zug at (20.00, 38.00)
+   Health is 2
+   Stopped
+   Not attacking
+
+Time 10: Enter command: Doostang: Twang!
+Zola: Ouch!
+Iriel: step...
+Iriel: Twang!
+Bug: Ouch!
+Bug: Watch out, Archer!
+Farm Rivendale now has 72.00
+Farm Sunnybrook now has 72.00
+Zola: Take Poison!
+Doostang: Ouch!
+Doostang: Doctor's attacking me! I'm going to run away to Rivendale
+Doostang: I'm already there
+
+Time 11: Enter command: Soldier Bug at (15.00, 20.00)
+   Health is 3
+   Stopped
+   Attacking Iriel
+Archer Doostang at (10.00, 10.00)
+   Health is 1
+   Stopped
+   Attacking Zola
+Archer Iriel at (13.27, 19.17)
+   Health is 2
+   Moving at speed 5.00 to (10.00, 10.00)
+   Attacking Bug
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 72.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 72.00
+Witch_doctor Zola at (10.00, 10.00)
+   Health is 1
+   Stopped
+   Attacking Doostang
+   Not healing
+Soldier Zug at (20.00, 38.00)
+   Health is 2
+   Stopped
+   Not attacking
+
+Time 11: Enter command: Bug: Clang!
+Iriel: Arrggh!
+Bug: I triumph!
+Doostang: Twang!
+Zola: Arrggh!
+Doostang: I triumph!
+Doostang: I'm attacking!
+Farm Rivendale now has 74.00
+Farm Sunnybrook now has 74.00
+
+Time 12: Enter command: Soldier Bug at (15.00, 20.00)
+   Health is 3
+   Stopped
+   Not attacking
+Archer Doostang at (10.00, 10.00)
+   Health is 1
+   Stopped
+   Attacking Pippin
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 74.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 74.00
+Soldier Zug at (20.00, 38.00)
+   Health is 2
+   Stopped
+   Not attacking
+
+Time 12: Enter command: Doostang: Twang!
+Pippin: Ouch!
+Farm Rivendale now has 76.00
+Farm Sunnybrook now has 76.00
+
+Time 13: Enter command: Soldier Bug at (15.00, 20.00)
+   Health is 3
+   Stopped
+   Not attacking
+Archer Doostang at (10.00, 10.00)
+   Health is 1
+   Stopped
+   Attacking Pippin
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 4
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 76.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 76.00
+Soldier Zug at (20.00, 38.00)
+   Health is 2
+   Stopped
+   Not attacking
+
+Time 13: Enter command: Done
