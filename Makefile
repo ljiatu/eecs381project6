@@ -10,7 +10,7 @@ OBJS += Farm.o Town_Hall.o
 OBJS += Peasant.o Warrior.o Soldier.o Archer.o Witch_doctor.o
 OBJS += Agent_factory.o Structure_factory.o
 OBJS += Geometry.o Utility.o
-PROG = proj6exe
+PROG = p6exe
 
 default: $(PROG)
 
