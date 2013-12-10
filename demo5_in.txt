@@ -1,0 +1,14 @@
+status
+train Bethune Witch_doctor 12 9
+Bethune attack Zola
+status go go go go
+Zug move 12 12 go go go go
+Zug attack Zola go status
+go go go
+status
+Iriel move 30 30 go go go
+status
+go go go go
+status
+quit
+
