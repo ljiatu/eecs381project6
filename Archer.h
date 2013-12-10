@@ -31,7 +31,7 @@ public:
 
     // Override Warrior behavior to print "Twang!". Then override Warrior's attack() 
     // can react specifically when attacked by Archer.
-	void attack() override;
+	void dispatch_hit() override;
 };
 
 #endif

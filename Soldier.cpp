@@ -3,6 +3,7 @@
 #include "Witch_doctor.h"
 #include "Utility.h"
 #include <cassert>
+#include <cstdlib>
 #include <iostream>
 
 using std::cout; using std::endl;
@@ -32,14 +33,13 @@ void Soldier::take_hit(int attack_strength, shared_ptr<Soldier> soldier_ptr)
 	// Solider's defend function, if he "happens to be able to defend himself"
 	// Then he will not lose health this time under attack.
 	int defend = rand() % soldier_defend_rand_range_c;
-	if (defend < soldier_defend_threshold_c) {
+	if(defend < soldier_defend_threshold_c) {
 		lose_health(attack_strength);
 		cout << get_name() << ": I failed to shield myself!" <<endl;
 	} else {
-		cout << get_name() << ": Tang!" <<endl;
-		cout << get_name() << ": I shielded myself!" << endl;
+		cout << get_name() << ": Tang! I shielded myself!" << endl;
 	}
-    if(!is_attacking() && is_alive() && soldier_ptr -> is_alive()) {
+    if(can_counter_attack(soldier_ptr)) {
         initiate_attacking("I'm attacking!", soldier_ptr);
     }
 }
@@ -47,16 +47,16 @@ void Soldier::take_hit(int attack_strength, shared_ptr<Soldier> soldier_ptr)
 void Soldier::take_hit(int attack_strength, shared_ptr<Archer> archer_ptr)
 {
     lose_health(attack_strength);
-    if(!is_attacking() && is_alive() && archer_ptr -> is_alive()) {
-        initiate_attacking("Watch me coming, Archer!", archer_ptr);
+    if(can_counter_attack(archer_ptr)) {
+        initiate_attacking("Watch out, Archer!", archer_ptr);
     }
 }
 
 void Soldier::take_hit(int attack_strength, shared_ptr<Witch_doctor> doctor_ptr)
 {
     lose_health(attack_strength);
-    if(!is_attacking() && is_alive() && doctor_ptr -> is_alive()) {
-        // the message is not expected to be visible
+    if(can_counter_attack(doctor_ptr)) {
+        move_to(doctor_ptr -> get_location());
         initiate_attacking("Watch me coming, Doctor!", doctor_ptr);
     }
 }
@@ -67,7 +67,7 @@ void Soldier::describe() const
     Warrior::describe();
 }
 
-void Soldier::attack() 
+void Soldier::dispatch_hit() 
 {
     auto target_ptr = get_target();
     assert(target_ptr);

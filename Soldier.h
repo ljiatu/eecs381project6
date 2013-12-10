@@ -17,8 +17,7 @@ public:
     void take_hit(int attack_strength, std::shared_ptr<Archer> archer_ptr) override;
 	
 	// Override Soldier under attack from Witch_doctor behavior.
-    // Should never be called because Witch_doctor always run towards farthest structure
-    // when attacked by Soldier.
+    // Soldier will step towards the doctor and attack it.
     void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> doctor_ptr) override;
 
     // output information about current state of the soldier
@@ -26,7 +25,7 @@ public:
 
 	// Override Warrior's attack() so that the correct message ("Clang") is printed
     // and target can react specifically when attacked by Soldier.
-	void attack() override;
+	void dispatch_hit() override;
 };
 
 #endif

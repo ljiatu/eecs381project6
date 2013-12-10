@@ -13,10 +13,7 @@ public:
 	
 	// Output information about current state.
 	void describe() const override;
-	
-	// Override Warrior's attack function, Doctor can't voluntarily attack.
-    void start_attacking(std::shared_ptr<Agent> target_ptr) override;
-	
+
 	// Start the healing process.
 	// Throws exception if the target is out of range, or not alive.
 	void start_healing(std::shared_ptr<Agent> target_ptr) override; 
@@ -32,13 +29,13 @@ public:
     void take_hit(int attack_strength, std::shared_ptr<Archer> archer_ptr) override;
 	
 	// Override Witch_doctor's under attack behavior from Witch_doctor.
-    // Should never be called since doctor cannot be commanded to attack others.
-    // So a doctor cannot be attacked by another doctor.
+    // Doctor will try to find a remedy, but he may intead find a lethal poison since he's in a hurry.
+    // If a remedy is found, he will not lose health this time. But if a poison is found, he will die immediately.
     void take_hit(int attack_strength, std::shared_ptr<Witch_doctor> doctor_ptr) override;
 
     // First print "Take Poison!". Then override Warrior's attack() so that target 
     // can react specifically when attacked by Witch_doctor.
-	void attack() override;
+	void dispatch_hit() override;
 
 private:
 	int curing_strength;

@@ -38,30 +38,32 @@ void Archer::update()
     }
 }
 
-void Archer::take_hit(int attack_strength, std::shared_ptr<Soldier> soldier_ptr)
+void Archer::take_hit(int attack_strength, shared_ptr<Soldier> soldier_ptr)
 {
 	lose_health(attack_strength);
-	if(is_alive() && soldier_ptr -> is_alive()) {
+    if(can_run_away(soldier_ptr)) {
 		auto farthest_structure_ptr = Model::get_instance().get_farthest_structure_ptr(shared_from_this());
-		cout << get_name() << ": I'm going to run away to " << farthest_structure_ptr -> get_name() << endl;
+        cout << get_name() << ": Soldier's attacking me! I'm going to run away to "
+             << farthest_structure_ptr -> get_name() << endl;
 		move_to(farthest_structure_ptr -> get_location());
 	}
 }
 
-void Archer::take_hit(int attack_strength, std::shared_ptr<Archer> archer_ptr)
+void Archer::take_hit(int attack_strength, shared_ptr<Archer> archer_ptr)
 {
 	lose_health(attack_strength);
-	if(!is_attacking() && is_alive() && archer_ptr -> is_alive()) {
+	if(can_counter_attack(archer_ptr)) {
         initiate_attacking("I'm fighting another Archer!", archer_ptr);
 	}
 }
 
-void Archer::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> doctor_ptr)
+void Archer::take_hit(int attack_strength, shared_ptr<Witch_doctor> doctor_ptr)
 {
     lose_health(attack_strength);
-    if(is_alive() && doctor_ptr -> is_alive()) {
+    if(can_run_away(doctor_ptr)) {
         auto closest_structure_ptr = Model::get_instance().get_closest_structure_ptr(shared_from_this());
-        cout << get_name() << ": I'm going to run away to " << closest_structure_ptr -> get_name() << endl;
+        cout << get_name() << ": Doctor's attacking me! I'm going to run away to " 
+             << closest_structure_ptr -> get_name() << endl;
         move_to(closest_structure_ptr -> get_location());
     }
 }
@@ -72,7 +74,7 @@ void Archer::describe() const
     Warrior::describe();
 }
 
-void Archer::attack()
+void Archer::dispatch_hit()
 {
     auto target_ptr = get_target();
     assert(target_ptr);

@@ -36,7 +36,8 @@ void Warrior::update()
         return;
     }
 
-	attack();
+    // print proper attacking word and impose hit on the target
+	dispatch_hit();
     if(!target_ptr -> is_alive()) {
         cout << get_name() << ": I triumph!" << endl;
         attacking = false;
@@ -84,4 +85,14 @@ void Warrior::initiate_attacking(const string& message, shared_ptr<Agent> target
     cout << get_name() << ": " << message << endl;
     target = target_ptr;
     attacking = true;
+}
+
+bool Warrior::can_counter_attack(shared_ptr<Agent> attacker) const
+{
+    return !attacking && is_alive() && attacker -> is_alive();
+}
+
+bool Warrior::can_run_away(shared_ptr<Agent> attacker) const
+{
+    return is_alive() && attacker -> is_alive();
 }

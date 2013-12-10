@@ -42,6 +42,11 @@ protected:
     // print the attack word and start attacking the specified target
     void initiate_attacking(const std::string& message, std::shared_ptr<Agent> target_ptr);
 
+    // return true if Warrior can counter-attack its attacker
+    bool can_counter_attack(std::shared_ptr<Agent> attacker) const;
+    // return true if the Warrior can run away
+    bool can_run_away(std::shared_ptr<Agent> attacker) const;
+
 private:
     int strength;
     double range;
@@ -51,7 +56,7 @@ private:
     // First prints out what the warrior says when attacking.
 	// Then let the target take hit. This shall be overriden by derived classes
     // so that the exact attacker type can be used.
-    virtual void attack() = 0;
+    virtual void dispatch_hit() = 0;
 };
 
 #endif

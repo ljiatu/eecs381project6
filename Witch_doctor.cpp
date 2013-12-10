@@ -5,6 +5,7 @@
 #include "Structure.h"
 #include "Utility.h"
 #include <cassert>
+#include <cstdlib>
 #include <iostream>
 
 using std::cout; using std::endl;
@@ -12,6 +13,11 @@ using std::shared_ptr; using std::weak_ptr;
 using std::static_pointer_cast;
 using std::string;
 
+// Doctor remedy threshold. If rand returns higher than this value, 
+// then he finds a remedy
+const int doctor_remedy_threshold_c = 1;
+// doctor remedy random generation range value
+const int doctor_remedy_rand_range_c = 4;
 // the initial curing strength of a witch doctor
 const int initial_attack_strength_c = 1;
 // the intial attackign strength of a witch doctor
@@ -92,12 +98,6 @@ void Witch_doctor::describe() const
 	}
 }
 
-void Witch_doctor::start_attacking(shared_ptr<Agent> target_ptr)
-{
-	// Witch_doctor cannot voluntarily attack other Agents.
-	throw Error(get_name() + ": I don't want to attack!");
-}
-
 void Witch_doctor::start_healing(shared_ptr<Agent> target_ptr) 
 {
 	// The Witch_doctor can't heal himself when he is counter-attacking
@@ -122,36 +122,42 @@ void Witch_doctor::start_healing(shared_ptr<Agent> target_ptr)
     initiate_healing(target_ptr);
 }
 
-void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Soldier> soldier_ptr)
+void Witch_doctor::take_hit(int attack_strength, shared_ptr<Soldier> soldier_ptr)
 {
     under_attack(attack_strength);
-	if(!is_attacking() && is_alive() && soldier_ptr -> is_alive()) {
+    if(can_run_away(soldier_ptr)) {
 		auto farthest_structure_ptr = Model::get_instance().get_farthest_structure_ptr(shared_from_this());
-		cout << get_name() << ": Soldier's attacking me!" << endl;
-		cout << get_name() << ": I'm going to run away to " << farthest_structure_ptr -> get_name() << endl;
+		cout << get_name() << ": Soldier's attacking me! I'm going to run away to " 
+             << farthest_structure_ptr -> get_name() << endl;
 		move_to(farthest_structure_ptr -> get_location());
 	}
 }
 
-void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Archer> archer_ptr)
+void Witch_doctor::take_hit(int attack_strength, shared_ptr<Archer> archer_ptr)
 {
     under_attack(attack_strength);
-    if(!is_attacking() && is_alive() && archer_ptr -> is_alive()) {
+    if(can_counter_attack(archer_ptr)) {
 		move_to(archer_ptr -> get_location());
         initiate_attacking("Archer, I'm coming for you!", archer_ptr);
     }
 }
 
-void Witch_doctor::take_hit(int attack_strength, std::shared_ptr<Witch_doctor> doctor_ptr)
+void Witch_doctor::take_hit(int attack_strength, shared_ptr<Witch_doctor> doctor_ptr)
 {
-    under_attack(attack_strength);
-    if(!is_attacking() && is_alive() && doctor_ptr -> is_alive()) {
-        // the message is not expected to be visible
-        initiate_attacking("Doctor, I'm coming for you!", doctor_ptr);
+    int remedy = rand() % doctor_remedy_rand_range_c;
+    if(remedy < doctor_remedy_threshold_c) {
+        cout << get_name() << ": I used the wrong medicine!" << endl;
+        // lose all health and die immediately
+        lose_health(initial_health_c);
+    } else {
+        cout << get_name() << ": I found the remedy! I healed myself!" << endl;
+    }
+    if(can_counter_attack(doctor_ptr)) {
+        initiate_attacking("Enjoy my poison, Doctor!", doctor_ptr);
     }
 }
 
-void Witch_doctor::attack()
+void Witch_doctor::dispatch_hit()
 {
     auto target_ptr = get_target();
     assert(target_ptr);
@@ -178,6 +184,6 @@ void Witch_doctor::stop_healing()
 
 void Witch_doctor::under_attack(int attack_strength)
 {
-    healing = false;
+    stop_healing();
     lose_health(attack_strength);
 }

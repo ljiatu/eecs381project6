@@ -166,7 +166,7 @@ shared_ptr<Agent> Model::get_closest_agent_ptr(shared_ptr<Agent> agent_ptr, doub
     return it -> second;
 }
 
-shared_ptr<Agent> Model::get_weakest_agent_in_range (shared_ptr<Agent> agent_ptr, double range) const
+shared_ptr<Agent> Model::get_weakest_agent_in_range(shared_ptr<Agent> agent_ptr, double range) const
 {
     // Create a vector of Agents who is in range of the supplied agent pointer who is not attacking
     // and whose health is below full health.
