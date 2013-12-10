@@ -1,0 +1,312 @@
+Demo1: S1 Witch_doctor simple behavior
+Time 0: Enter command: Zug move 12 12 Bug move 12 12 go go go go status
+Zug: I'm on the way
+
+Time 0: Enter command: Bug: I'm on the way
+
+Time 0: Enter command: Bug: step...
+Farm Rivendale now has 52.00
+Farm Sunnybrook now has 52.00
+Zug: step...
+
+Time 1: Enter command: Bug: I'm there!
+Farm Rivendale now has 54.00
+Farm Sunnybrook now has 54.00
+Zug: step...
+
+Time 2: Enter command: Farm Rivendale now has 56.00
+Farm Sunnybrook now has 56.00
+Zug: step...
+
+Time 3: Enter command: Farm Rivendale now has 58.00
+Farm Sunnybrook now has 58.00
+Zug: I'm there!
+
+Time 4: Enter command: Soldier Bug at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Stopped
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 58.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 58.00
+Witch_doctor Zola at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Not healing
+Soldier Zug at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+
+Time 4: Enter command: Zug attack Bug go go
+Zug: I'm attacking!
+
+Time 4: Enter command: Farm Rivendale now has 60.00
+Farm Sunnybrook now has 60.00
+Zug: Clang!
+Bug: Tang! I shielded myself!
+Bug: I'm attacking!
+
+Time 5: Enter command: Bug: Clang!
+Zug: Ouch!
+Zug: I failed to shield myself!
+Farm Rivendale now has 62.00
+Farm Sunnybrook now has 62.00
+Zug: Clang!
+Bug: Tang! I shielded myself!
+
+Time 6: Enter command: Zola heal Zola
+Zola: This patient is perfectly healthy!
+
+Time 6: Enter command: Zola heal Bug
+Zola: I don't want to catch myself between Warriors!
+
+Time 6: Enter command: Zola heal Pippin
+Zola: Patient is out of range!
+
+Time 6: Enter command: go go go go go go status
+Bug: Clang!
+Zug: Tang! I shielded myself!
+Farm Rivendale now has 64.00
+Farm Sunnybrook now has 64.00
+Zug: Clang!
+Bug: Tang! I shielded myself!
+
+Time 7: Enter command: Bug: Clang!
+Zug: Tang! I shielded myself!
+Farm Rivendale now has 66.00
+Farm Sunnybrook now has 66.00
+Zug: Clang!
+Bug: Ouch!
+Bug: I failed to shield myself!
+
+Time 8: Enter command: Bug: Clang!
+Zug: Ouch!
+Zug: I failed to shield myself!
+Farm Rivendale now has 68.00
+Farm Sunnybrook now has 68.00
+Zug: Clang!
+Bug: Tang! I shielded myself!
+
+Time 9: Enter command: Bug: Clang!
+Zug: Tang! I shielded myself!
+Farm Rivendale now has 70.00
+Farm Sunnybrook now has 70.00
+Zug: Clang!
+Bug: Ouch!
+Bug: I failed to shield myself!
+
+Time 10: Enter command: Bug: Clang!
+Zug: Tang! I shielded myself!
+Farm Rivendale now has 72.00
+Farm Sunnybrook now has 72.00
+Zug: Clang!
+Bug: Arrggh!
+Bug: I failed to shield myself!
+Zug: I triumph!
+
+Time 11: Enter command: Farm Rivendale now has 74.00
+Farm Sunnybrook now has 74.00
+Zola: Start healing Zug!
+
+Time 12: Enter command: Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Stopped
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 74.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 74.00
+Witch_doctor Zola at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Healing Zug
+Soldier Zug at (12.00, 12.00)
+   Health is 1
+   Stopped
+   Not attacking
+
+Time 12: Enter command: go go status
+Farm Rivendale now has 76.00
+Farm Sunnybrook now has 76.00
+Zola: I'm healing Zug!
+Zug: I'm feeling better!
+
+Time 13: Enter command: Farm Rivendale now has 78.00
+Farm Sunnybrook now has 78.00
+Zola: I'm healing Zug!
+Zug: I'm feeling better!
+
+Time 14: Enter command: Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Stopped
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 78.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 78.00
+Witch_doctor Zola at (12.00, 12.00)
+   Health is 5
+   Stopped
+   Not attacking
+   Healing Zug
+Soldier Zug at (12.00, 12.00)
+   Health is 3
+   Stopped
+   Not attacking
+
+Time 14: Enter command: Zug attack Zola
+Zug: I'm attacking!
+
+Time 14: Enter command: go go go status
+Farm Rivendale now has 80.00
+Farm Sunnybrook now has 80.00
+Zola: Patient is now in fight with other Agents!
+Zug: Clang!
+Zola: Ouch!
+Zola: Soldier's attacking me! I'm going to run away to Paduca
+Zola: I'm on the way
+
+Time 15: Enter command: Farm Rivendale now has 82.00
+Farm Sunnybrook now has 82.00
+Zola: step...
+Zola: Start healing Zola!
+Zug: Target is now out of range
+
+Time 16: Enter command: Farm Rivendale now has 84.00
+Farm Sunnybrook now has 84.00
+Zola: step...
+Zola: I'm healing Zola!
+Zola: I'm feeling better!
+
+Time 17: Enter command: Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Stopped
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 84.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 84.00
+Witch_doctor Zola at (19.07, 19.07)
+   Health is 4
+   Moving at speed 5.00 to (30.00, 30.00)
+   Not attacking
+   Healing Zola
+Soldier Zug at (12.00, 12.00)
+   Health is 3
+   Stopped
+   Not attacking
+
+Time 17: Enter command: go status
+Farm Rivendale now has 86.00
+Farm Sunnybrook now has 86.00
+Zola: step...
+Zola: I'm healing Zola!
+Zola: I'm feeling better!
+
+Time 18: Enter command: Archer Iriel at (20.00, 38.00)
+   Health is 5
+   Stopped
+   Not attacking
+Peasant Merry at (0.00, 25.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Town_Hall Paduca at (30.00, 30.00)
+   Contains 0.00
+Peasant Pippin at (5.00, 10.00)
+   Health is 5
+   Stopped
+   Carrying 0.00
+Farm Rivendale at (10.00, 10.00)
+   Food available: 86.00
+Town_Hall Shire at (20.00, 20.00)
+   Contains 0.00
+Farm Sunnybrook at (0.00, 30.00)
+   Food available: 86.00
+Witch_doctor Zola at (22.61, 22.61)
+   Health is 5
+   Moving at speed 5.00 to (30.00, 30.00)
+   Not attacking
+   Healing Zola
+Soldier Zug at (12.00, 12.00)
+   Health is 3
+   Stopped
+   Not attacking
+
+Time 18: Enter command: go
+Farm Rivendale now has 88.00
+Farm Sunnybrook now has 88.00
+Zola: step...
+Zola: Patient is now perfectly healthy!
+
+Time 19: Enter command: quit
+Done
+
+
+Bo Chen, Jiatu Liu
+
+
+
+
+
+
+
+
+
+
