@@ -39,7 +39,8 @@ public:
 
 private:
 	int curing_strength;
-	std::weak_ptr<Agent> target;
+    // the agent that the doctor is healing
+	std::weak_ptr<Agent> heal_target;
 	bool healing;
 
     // Start healing process, save the target pointer.

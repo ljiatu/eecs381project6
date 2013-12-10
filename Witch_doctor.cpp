@@ -47,38 +47,38 @@ void Witch_doctor::update()
 		if(patient) {
             initiate_healing(patient);
 		}
-	// If the current state is healing, then check if the target is still alive, and that
-	// the target is still in range. If not, change healing to false and output msg accordingly.
+	// If the current state is healing, then check if the heal_target is still alive, and that
+	// the heal_target is still in range. If not, change healing to false and output msg accordingly.
 	} else {
 		// Test if the patient is still alive.
-		auto target_ptr = target.lock();
-		if(!target_ptr || !target_ptr -> is_alive()) {
+		auto heal_target_ptr = heal_target.lock();
+		if(!heal_target_ptr || !heal_target_ptr -> is_alive()) {
 			cout << get_name() << ": Patient is dead." << endl;
             stop_healing();
             return;
 		}
 		// Test if the patient is in range. 
-		double distance = cartesian_distance(get_location(), target_ptr -> get_location());
+		double distance = cartesian_distance(get_location(), heal_target_ptr -> get_location());
 		if(distance > initial_witch_doctor_range_c) {
 			cout << get_name()  << ": Patient is now out of range." << endl;
             stop_healing();
             return;
 		}
         // Test if the patient is now healed.
-		if (target_ptr -> get_health() == initial_health_c) {
+		if (heal_target_ptr -> get_health() == initial_health_c) {
 			cout << get_name()  << ": Patient is now perfectly healthy!" << endl;
             stop_healing();
             return;
 		}	
         // Test if the patient is now attacking other Agents.
-        if (target_ptr -> is_attacking()) {
+        if (heal_target_ptr -> is_attacking()) {
             cout << get_name() << ": Patient is now in fight with other Agents!" <<endl;
             stop_healing();
             return;
         }
 		// Continue healing process.
-		cout << get_name() << ": I'm healing " << target_ptr -> get_name() << "!"<< endl;
-		target_ptr -> gain_health(curing_strength);
+		cout << get_name() << ": I'm healing " << heal_target_ptr -> get_name() << "!"<< endl;
+		heal_target_ptr -> gain_health(curing_strength);
 	}
 }
 
@@ -87,18 +87,18 @@ void Witch_doctor::describe() const
 	// First, Describe Witch_doctor's warrior behavior.
 	cout << "Witch_doctor ";
 	Warrior::describe();
-	auto target_ptr = target.lock();
+	auto heal_target_ptr = heal_target.lock();
 	if (!healing)
 		cout << "   Not healing" << endl;
 	else {
-		if (target_ptr)
-			cout << "   Healing " << target_ptr -> get_name() << endl;
+		if (heal_target_ptr)
+			cout << "   Healing " << heal_target_ptr -> get_name() << endl;
 		else
 			cout << "   Healing dead patient" << endl;
 	}
 }
 
-void Witch_doctor::start_healing(shared_ptr<Agent> target_ptr) 
+void Witch_doctor::start_healing(shared_ptr<Agent> heal_target_ptr) 
 {
 	// The Witch_doctor can't heal himself when he is counter-attacking
 	// his aggressor.
@@ -106,20 +106,20 @@ void Witch_doctor::start_healing(shared_ptr<Agent> target_ptr)
         throw Error(get_name() + ": I'm busy counter-attacking!");
     } 
     // The Witch_doctor cannot heal dead patients.
-	if(!target_ptr -> is_alive()) {
+	if(!heal_target_ptr -> is_alive()) {
         throw Error(get_name()+ ": I can't save dead patients!");
     }
-	if (target_ptr -> is_attacking()) {
+	if (heal_target_ptr -> is_attacking()) {
 		throw Error(get_name()+ ": I don't want to catch myself between Warriors!");
 	}
-    double distance = cartesian_distance(get_location(), target_ptr -> get_location());
+    double distance = cartesian_distance(get_location(), heal_target_ptr -> get_location());
     if(distance > initial_witch_doctor_range_c) {
         throw Error(get_name() + ": Patient is out of range!");
     }
-    if (target_ptr -> get_health() == initial_health_c) {
+    if (heal_target_ptr -> get_health() == initial_health_c) {
     	throw Error(get_name() + ": This patient is perfectly healthy!");
     }
-    initiate_healing(target_ptr);
+    initiate_healing(heal_target_ptr);
 }
 
 void Witch_doctor::take_hit(int attack_strength, shared_ptr<Soldier> soldier_ptr)
@@ -162,15 +162,15 @@ void Witch_doctor::dispatch_hit()
     auto target_ptr = get_target();
     assert(target_ptr);
     cout << get_name()  << ": " << witch_doctor_attack_message_c << endl;
-	// Call target's take_hit function with target's exact type.
+	// Call heal_target's take_hit function with heal_target's exact type.
 	// Dispatch to appropriate action.
 	get_target() -> take_hit(get_strength(), static_pointer_cast<Witch_doctor>(shared_from_this()));
 }
 
-void Witch_doctor::initiate_healing(shared_ptr<Agent> target_ptr)
+void Witch_doctor::initiate_healing(shared_ptr<Agent> heal_target_ptr)
 {
-	cout << get_name() << ": Start healing " << target_ptr -> get_name() << "!" << endl;
-	target = target_ptr;
+	cout << get_name() << ": Start healing " << heal_target_ptr -> get_name() << "!" << endl;
+	heal_target = heal_target_ptr;
 	healing = true;
 	return;
 }
@@ -178,7 +178,7 @@ void Witch_doctor::initiate_healing(shared_ptr<Agent> target_ptr)
 void Witch_doctor::stop_healing()
 {
 	healing = false;
-	target.reset();
+	heal_target.reset();
 	return;
 }
 
