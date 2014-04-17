@@ -24,8 +24,8 @@ public:
 	Controller();
 
 	// create View object, run the program by acccepting user commands, 
-    // then destroy View object by destroying all View containers and reseting
-    // shared pointers to Views
+        // then destroy View object by destroying all View containers and reseting
+        // shared pointers to Views
 	void run();
 
 private:
